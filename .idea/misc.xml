@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.11738984191052809" />
+        <entry key="app/src/main/res/drawable/app_btn.xml" value="0.2985" />
+        <entry key="app/src/main/res/drawable/bordered.xml" value="0.3345" />
+        <entry key="app/src/main/res/drawable/card.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/circle.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/container.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/curved.xml" value="0.2285" />
+        <entry key="app/src/main/res/drawable/t_home_curve.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/t_home_curve2.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/view_profilecard.xml" value="0.277" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/card.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_assignment.xml" value="0.16875" />
+        <entry key="app/src/main/res/layout/fragment_makeprofile.xml" value="0.2573007103393844" />
+        <entry key="app/src/main/res/layout/fragment_marklist.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_post_message.xml" value="0.16171875" />
+        <entry key="app/src/main/res/layout/fragment_query.xml" value="0.16171875" />
+        <entry key="app/src/main/res/layout/fragment_register_stdnt.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_register_tchr.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.3234375" />
+        <entry key="app/src/main/res/layout/fragment_splashfragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_splashragment.xml" value="0.3234375" />
+        <entry key="app/src/main/res/layout/fragment_staff__editprofile.xml" value="0.16875" />
+        <entry key="app/src/main/res/layout/fragment_staff__home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_t_home.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_t_studentlist.xml" value="0.16875" />
+        <entry key="app/src/main/res/layout/fragment_view_profile.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/student_list.xml" value="0.14" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

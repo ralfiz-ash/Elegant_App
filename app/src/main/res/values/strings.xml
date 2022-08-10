@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Elegant_App</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="applogo_name">Elegant App</string>
+    <string name="signin">Sign In</string>
+    <string name="continuewith">Or Continue with</string>
+    <string name="enterusername">Enter username</string>
+    <string name="enterpassword">Password</string>
+    //teacher fragments-make profile
+    <string name="fillprofile">Complete Your Profile</string>
+    <string name="Tname">Your Name</string>
+    <string name="Tqualification">Qualification</string>
+    <string name="Texperience">Experience</string>
+    <string name="Tmobile">Mobile</string>
+    <string name="Temail">Email</string>
+    <string name="Taddress">Address</string>
+    <string name="Tblood">Blood Group</string>
+    <string name="Tdob">Date of birth</string>
+    <string name="postmessage">Post a message</string>
+    <string name="etpostmessage">Type your message</string>
+    <string name="postmessagebtn">Post</string>
+    <string name="Tasmnthead">Post an Assignment</string>
+    <string name="etTasmntsub">Select the subject</string>
+    <string name="etTasmnttopic">Type the topic</string>
+    <string name="etTasmntdate">Select deadline</string>
+    <string name="Tmarkhead">Mark List</string>
+    <string name="Tmarkexamname">Name of examination</string>
+    <string name="Tmarksubject">Subject</string>
+    <string name="Tmarkmedium">Choose Medium</string>
+    <string name="Tmarkclass">Choose Class</string>
+    <string name="Tmarkdiv">Choose Division</string>
+    <string name="btnNext">Next</string>
+    <string name="Tincharge">In Charge</string>
+
+
+</resources>

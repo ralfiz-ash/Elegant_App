@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/App_background"
+    tools:context=".SignInFragment">
+
+ <View
+     android:id="@+id/view"
+     android:layout_width="match_parent"
+     android:layout_height="200dp"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent" />
+
+ <EditText
+     android:id="@+id/etUsername"
+     android:layout_width="match_parent"
+     android:layout_height="50dp"
+     android:layout_marginStart="24dp"
+     android:layout_marginTop="16dp"
+     android:hint="@string/enterusername"
+     android:paddingStart="10dp"
+     android:layout_marginEnd="24dp"
+     android:background="@drawable/curved"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@id/view" />
+
+ <EditText
+     android:id="@+id/etPassword"
+     android:layout_width="match_parent"
+     android:layout_height="50dp"
+     android:layout_marginStart="24dp"
+     android:layout_marginTop="40dp"
+     android:layout_marginEnd="24dp"
+     android:background="@drawable/curved"
+     android:hint="@string/enterpassword"
+     android:paddingStart="10dp"
+     android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
+     android:paddingEnd="10dp"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@id/etUsername" />
+
+ <Button
+     android:id="@+id/btn_Signin"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="24dp"
+     android:layout_marginTop="40dp"
+     android:layout_marginEnd="24dp"
+     android:background="@drawable/app_btn"
+     android:fontFamily="@font/amaranth"
+     android:text="@string/signin"
+     android:textAllCaps="false"
+     android:textSize="18dp"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+ <TextView
+     android:id="@+id/tvContinuewith"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="48dp"
+     android:text="@string/continuewith"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/btn_Signin" />
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:id="@+id/clGoogleimg"
+     android:layout_width="60dp"
+     android:layout_height="60dp"
+     android:background="@drawable/container"
+     app:layout_constraintEnd_toStartOf="@+id/clAppleeimg"
+     app:layout_constraintTop_toBottomOf="@id/tvContinuewith"
+     app:layout_constraintStart_toStartOf="parent"
+     >
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/googleimg"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:id="@+id/clAppleeimg"
+     android:layout_width="60dp"
+     android:layout_height="60dp"
+     android:background="@drawable/container"
+     app:layout_constraintEnd_toStartOf="@+id/clFbimg"
+     app:layout_constraintHorizontal_bias="0.5"
+     app:layout_constraintStart_toEndOf="@+id/clGoogleimg"
+     app:layout_constraintTop_toTopOf="@+id/clGoogleimg">
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/kisspng_apple_logo_5b23ce500fe049_044310091529073232065"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:id="@+id/clFbimg"
+     android:layout_width="60dp"
+     android:layout_height="60dp"
+     android:background="@drawable/container"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.5"
+     app:layout_constraintStart_toEndOf="@+id/clAppleeimg"
+     app:layout_constraintTop_toTopOf="@+id/clAppleeimg">
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/fb2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

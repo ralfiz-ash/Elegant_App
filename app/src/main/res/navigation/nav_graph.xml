@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashfragment">
+
+    <fragment
+        android:id="@+id/splashfragment"
+        android:name="com.example.elegant_app.SplashFragment"
+        android:label="fragment_splashragment"
+        tools:layout="@layout/fragment_splashfragment" >
+        <action
+            android:id="@+id/action_splashragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.elegant_app.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_THomeFragment"
+            app:destination="@id/THomeFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_staff_HomeFragment"
+            app:destination="@id/staff_HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeprofileFragment"
+        android:name="com.example.elegant_app.teacher.MakeprofileFragment"
+        android:label="fragment_makeprofile"
+        tools:layout="@layout/fragment_makeprofile" />
+    <fragment
+        android:id="@+id/THomeFragment"
+        android:name="com.example.elegant_app.teacher.THomeFragment"
+        android:label="fragment_t_home"
+        tools:layout="@layout/fragment_t_home" >
+        <action
+            android:id="@+id/action_THomeFragment_to_assignmentFragment"
+            app:destination="@id/assignmentFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_makeprofileFragment"
+            app:destination="@id/makeprofileFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_postMessageFragment"
+            app:destination="@id/postMessageFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_marklistFragment"
+            app:destination="@id/marklistFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_viewProfileFragment"
+            app:destination="@id/viewProfileFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_queryFragment"
+            app:destination="@id/queryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assignmentFragment"
+        android:name="com.example.elegant_app.teacher.AssignmentFragment"
+        android:label="fragment_assignment"
+        tools:layout="@layout/fragment_assignment" />
+    <fragment
+        android:id="@+id/postMessageFragment"
+        android:name="com.example.elegant_app.teacher.PostMessageFragment"
+        android:label="fragment_post_message"
+        tools:layout="@layout/fragment_post_message" />
+    <fragment
+        android:id="@+id/marklistFragment"
+        android:name="com.example.elegant_app.teacher.MarklistFragment"
+        android:label="fragment_marklist"
+        tools:layout="@layout/fragment_marklist" >
+        <action
+            android:id="@+id/action_marklistFragment_to_t_studentlistFragment"
+            app:destination="@id/t_studentlistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/t_studentlistFragment"
+        android:name="com.example.elegant_app.teacher.T_studentlistFragment"
+        android:label="fragment_t_studentlist"
+        tools:layout="@layout/fragment_t_studentlist" />
+    <fragment
+        android:id="@+id/viewProfileFragment"
+        android:name="com.example.elegant_app.teacher.ViewProfileFragment"
+        android:label="fragment_view_profile"
+        tools:layout="@layout/fragment_view_profile" />
+    <fragment
+        android:id="@+id/queryFragment"
+        android:name="com.example.elegant_app.teacher.QueryFragment"
+        android:label="fragment_query"
+        tools:layout="@layout/fragment_query" />
+    <fragment
+        android:id="@+id/staff_HomeFragment"
+        android:name="com.example.elegant_app.staff.Staff_HomeFragment"
+        android:label="fragment_staff__home"
+        tools:layout="@layout/fragment_staff__home" />
+</navigation>
