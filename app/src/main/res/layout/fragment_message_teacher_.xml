@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".staff.MessageTeacher_Fragment">
+
+    <TextView
+        android:id="@+id/tvmessageHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/amaranth"
+        android:text="Send Information "
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/tvselect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/amaranth"
+        android:text="Select a tutor :- "
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTeachers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/tutor_list"
+/>
+
+</LinearLayout>

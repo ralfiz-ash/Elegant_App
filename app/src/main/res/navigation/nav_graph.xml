@@ -25,12 +25,11 @@
         <action
             android:id="@+id/action_signInFragment_to_staff_HomeFragment"
             app:destination="@id/staff_HomeFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_admin_HomeFragment"
+            app:destination="@id/admin_HomeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/makeprofileFragment"
-        android:name="com.example.elegant_app.teacher.MakeprofileFragment"
-        android:label="fragment_makeprofile"
-        tools:layout="@layout/fragment_makeprofile" />
+
     <fragment
         android:id="@+id/THomeFragment"
         android:name="com.example.elegant_app.teacher.THomeFragment"
@@ -39,9 +38,6 @@
         <action
             android:id="@+id/action_THomeFragment_to_assignmentFragment"
             app:destination="@id/assignmentFragment" />
-        <action
-            android:id="@+id/action_THomeFragment_to_makeprofileFragment"
-            app:destination="@id/makeprofileFragment" />
         <action
             android:id="@+id/action_THomeFragment_to_postMessageFragment"
             app:destination="@id/postMessageFragment" />
@@ -93,5 +89,119 @@
         android:id="@+id/staff_HomeFragment"
         android:name="com.example.elegant_app.staff.Staff_HomeFragment"
         android:label="fragment_staff__home"
-        tools:layout="@layout/fragment_staff__home" />
+        tools:layout="@layout/fragment_staff__home" >
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_registerStdntFragment"
+            app:destination="@id/registerStdntFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_staff_PostFragment"
+            app:destination="@id/staff_PostFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_registerTchrFragment3"
+            app:destination="@id/registerTchrFragment3" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_teacher_listFragment"
+            app:destination="@id/teacher_listFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_student_listFragment"
+            app:destination="@id/student_listFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_feeListFragment"
+            app:destination="@id/feeListFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_feeMgtFragment"
+            app:destination="@id/feeMgtFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/registerStdntFragment"
+        android:name="com.example.elegant_app.staff.RegisterStdntFragment"
+        android:label="fragment_register_stdnt"
+        tools:layout="@layout/fragment_register_stdnt" />
+    <fragment
+        android:id="@+id/staff_PostFragment"
+        android:name="com.example.elegant_app.staff.Staff_PostFragment"
+        android:label="fragment_staff__post"
+        tools:layout="@layout/fragment_staff__post" />
+    <fragment
+        android:id="@+id/registerTchrFragment3"
+        android:name="com.example.elegant_app.staff.RegisterTchrFragment"
+        android:label="fragment_register_tchr"
+        tools:layout="@layout/fragment_register_tchr" />
+    <fragment
+        android:id="@+id/teacher_listFragment"
+        android:name="com.example.elegant_app.staff.Teacher_listFragment"
+        android:label="fragment_teacher_list"
+        tools:layout="@layout/fragment_teacher_list" >
+        <action
+            android:id="@+id/action_teacher_listFragment_to_teacherProfileFragment"
+            app:destination="@id/teacherProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/student_listFragment"
+        android:name="com.example.elegant_app.staff.Student_listFragment"
+        android:label="fragment_student_list"
+        tools:layout="@layout/fragment_student_list" />
+    <fragment
+        android:id="@+id/admin_HomeFragment"
+        android:name="com.example.elegant_app.admin.Admin_HomeFragment"
+        android:label="fragment_adminhome"
+        tools:layout="@layout/fragment_adminhome" >
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_registerstaffFragment"
+            app:destination="@id/registerstaffFragment" />
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_connectStaffFragment"
+            app:destination="@id/connectStaffFragment" />
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_feeListFragment"
+            app:destination="@id/feeListFragment" />
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_staff_listFragment"
+            app:destination="@id/staff_listFragment" />
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment" />
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_student_listFragment"
+            app:destination="@id/student_listFragment" />
+        <action
+            android:id="@+id/action_admin_HomeFragment_to_teacher_listFragment"
+            app:destination="@id/teacher_listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectStaffFragment"
+        android:name="com.example.elegant_app.admin.ConnectStaffFragment"
+        android:label="fragment_connect_staff"
+        tools:layout="@layout/fragment_connect_staff" />
+    <fragment
+        android:id="@+id/feeListFragment"
+        android:name="com.example.elegant_app.staff.FeeListFragment"
+        android:label="fragment_fee_list"
+        tools:layout="@layout/fragment_fee_list" />
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.example.elegant_app.admin.FeedbackFragment"
+        android:label="fragment_feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/registerstaffFragment"
+        android:name="com.example.elegant_app.admin.RegisterstaffFragment"
+        android:label="fragment_registerstaff"
+        tools:layout="@layout/fragment_registerstaff" />
+    <fragment
+        android:id="@+id/staff_listFragment"
+        android:name="com.example.elegant_app.admin.Staff_listFragment"
+        android:label="fragment_staff_list"
+        tools:layout="@layout/fragment_staff_list" />
+    <fragment
+        android:id="@+id/teacherProfileFragment"
+        android:name="com.example.elegant_app.staff.TeacherProfileFragment"
+        android:label="fragment_teacher_profile"
+        tools:layout="@layout/fragment_teacher_profile" />
+    <fragment
+        android:id="@+id/feeMgtFragment"
+        android:name="com.example.elegant_app.staff.FeeMgtFragment"
+        android:label="fragment_fee_mgt"
+        tools:layout="@layout/fragment_fee_mgt" />
 </navigation>

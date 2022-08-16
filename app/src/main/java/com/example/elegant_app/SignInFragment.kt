@@ -37,6 +37,13 @@ class SignInFragment : Fragment() {
             clGoogleimg.setOnClickListener(){
                 findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToStaffHomeFragment())
             }
+
+            clAppleeimg.setOnClickListener(){
+                findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToAdminHomeFragment())
+            }
+            clFbimg.setOnClickListener(){
+               // findNavController().navigate(SignInFragmentDirections.)
+            }
         }
     }
 

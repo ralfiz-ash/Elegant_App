@@ -70,9 +70,7 @@ class THomeFragment : Fragment() {
         }
 
         binding.apply {
-            editIcon.setOnClickListener(){
-                findNavController().navigate(THomeFragmentDirections.actionTHomeFragmentToMakeprofileFragment())
-            }
+
         }
 
     }

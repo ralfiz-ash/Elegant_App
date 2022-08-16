@@ -7,147 +7,152 @@
     android:background="@drawable/bluredbg"
     tools:context=".teacher.ViewProfileFragment">
 
-    <ImageView
-        android:id="@+id/backArrow"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:src="@drawable/arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@+id/heading"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Side"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/heading" />
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile card"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/ivHead"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="250dp"
-        android:src="@drawable/view_profilecard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <ImageView
+            android:id="@+id/BackArrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/head2"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:gravity="center_vertical"
+            android:rotation="270"
+            android:text="Elegant "
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tTchrBloodgroup"
+            />
+        <TextView
+            android:id="@+id/head3"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:gravity="center_vertical"
+            android:rotation="270"
+            android:text="Institute "
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_marginBottom="-85dp"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/head2"
+            />
+
+        <TextView
+            android:id="@+id/tTchrBloodgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_bloodtype_24"
+            android:text="B+"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <ImageView
         android:id="@+id/roundImg"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="88dp"
-        android:scaleType="centerCrop"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:scaleType="fitXY"
         android:src="@drawable/messi"
-        app:layout_constraintBottom_toTopOf="@+id/ivHead"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivHead" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Side"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/roundImg"
-        android:orientation="vertical">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/light_blue_600"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Side"
+        app:layout_constraintTop_toBottomOf="@id/roundImg">
+
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/TchrName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/amaranth"
             android:text="Name"
-            />
+            android:textSize="24dp" />
+
         <TextView
-            android:id="@+id/tvDob"
+            android:id="@+id/TchrDob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
-            android:text="Name"
-            />
+            android:fontFamily="@font/amaranth"
+            android:text="Dob"
+            android:textSize="24dp" />
+
         <TextView
             android:id="@+id/tvQualification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
-            android:text="Name"
-            />
+            android:fontFamily="@font/amaranth"
+            android:text="Qualification"
+            android:textSize="24dp" />
+
         <TextView
             android:id="@+id/tvMobile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
-            android:text="Name"
-            />
-        <TextView
-            android:id="@+id/tvEmail"
+            android:fontFamily="@font/amaranth"
+            android:text="Mobile"
+            android:textSize="24dp" />
+
+       <TextView
+            android:id="@+id/TchrEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40dp"
+            android:textSize="24dp"
             android:layout_marginTop="16dp"
-            android:text="Name"
+           android:layout_marginStart="4dp"
+           android:fontFamily="@font/amaranth"
+            android:text="Email"
             />
-        <TextView
-            android:id="@+id/tvAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40dp"
-            android:layout_marginTop="16dp"
-            android:text="Name"
-            />
-        <TextView
-            android:id="@+id/tvBloodgroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40dp"
-            android:layout_marginTop="16dp"
-            android:text="Name"
-            />
+        <!--
+       <TextView
+           android:id="@+id/tvAddress"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="40dp"
+           android:layout_marginTop="16dp"
+           android:text="Name"
+           />
+       -->
 
     </LinearLayout>
 
 
-
-    <!--<androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="144dp"
-            android:layout_height="133dp"
-            android:background="@drawable/circle"
-            android:src="@drawable/messi"
-            tools:layout_editor_absoluteX="78dp"
-            tools:layout_editor_absoluteY="236dp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/view_profilecard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="300dp"
-            android:elevation="40dp"
-            >
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

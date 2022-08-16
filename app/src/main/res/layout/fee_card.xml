@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fee_card"
+        app:cardElevation="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <ImageView
+                android:id="@+id/feeimage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/receipt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvpaidName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Student Name"
+                app:layout_constraintStart_toEndOf="@+id/feeimage"
+                app:layout_constraintTop_toTopOf="@+id/feeimage" />
+
+            <TextView
+                android:id="@+id/tvpaidClass"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="10 A"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvpaidName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvpaidDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="12/08/2022"
+                app:layout_constraintStart_toStartOf="@+id/tvpaidName"
+                app:layout_constraintTop_toBottomOf="@id/tvpaidClass" />
+
+            <TextView
+                android:id="@+id/tvPaidfor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Paid For - "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/feeimage"
+                app:layout_constraintTop_toBottomOf="@+id/feeimage" />
+
+            <TextView
+                android:id="@+id/tvMonth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Month Name "
+                app:layout_constraintStart_toEndOf="@+id/tvPaidfor"
+                app:layout_constraintTop_toTopOf="@+id/tvPaidfor"
+                />
+
+            <TextView
+                android:id="@+id/tvamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="500"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvpaidDate" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>

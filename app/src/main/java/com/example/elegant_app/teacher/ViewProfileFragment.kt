@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.elegant_app.R
 import com.example.elegant_app.databinding.FragmentViewProfileBinding
 
@@ -27,8 +28,8 @@ private lateinit var binding:FragmentViewProfileBinding
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            backArrow.setOnClickListener(){
-
+            BackArrow.setOnClickListener(){
+                findNavController().navigateUp()
             }
         }
     }

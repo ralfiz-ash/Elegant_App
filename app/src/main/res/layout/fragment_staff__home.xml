@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#070126"
+    android:background="@color/light_blue_600"
     tools:context=".staff.Staff_HomeFragment">
 
     <TextView
@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Elegant Staff "
+        android:fontFamily="@font/amaranth"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:layout_marginTop="24dp"
@@ -20,19 +21,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <ImageView
+        android:id="@+id/iv_staffprofile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/heading"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/item1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:elevation="16dp"
-        android:layout_marginTop="24dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toStartOf="@+id/item2"
-       app:layout_constraintTop_toBottomOf="@id/heading"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.3"
-        >
+        app:layout_constraintTop_toBottomOf="@id/heading"
+        app:layout_constraintWidth_percent="0.3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +58,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
                 android:text="Students"
-                android:textSize="25sp" />
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/item1_stud_count"
@@ -56,7 +68,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
                 android:text="300"
-                android:textSize="40sp"
+                android:textColor="#777474"
+                android:textSize="28sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -65,8 +78,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:elevation="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
@@ -88,7 +101,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
                 android:text="Teachers"
-                android:textSize="25sp" />
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/item1_teacher_count"
@@ -97,7 +111,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
                 android:text="20"
-                android:textSize="40sp"
+                android:textColor="#777474"
+                android:textSize="28sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -106,8 +121,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:elevation="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
@@ -130,7 +145,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
                 android:text="Batches"
-                android:textSize="25sp" />
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/item1_batch_count"
@@ -139,7 +155,8 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
                 android:text="4"
-                android:textSize="40sp"
+                android:textColor="#777474"
+                android:textSize="28sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -149,33 +166,34 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item2">
+        app:layout_constraintTop_toBottomOf="@+id/item2"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/white_curve"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="200dp"
             android:background="@drawable/view_profilecard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item1">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile1"
+                android:id="@+id/btnFee"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
-                app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -183,235 +201,301 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=" Fee Management"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fee Management"
+                        android:fontFamily="@font/amaranth"
+                        android:textSize="26dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"/>
+                </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnRegStudent"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnFee">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register New Student"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile2"
+                android:id="@+id/btnRegTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile1">
+                app:layout_constraintTop_toBottomOf="@id/btnRegStudent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Register Student"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register New Teacher"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile3"
+                android:id="@+id/btnStudentlist"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile2">
+                app:layout_constraintTop_toBottomOf="@id/btnRegTeacher">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:id="@+id/btn_RgTchr"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Register Teacher"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Students List"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile4"
+                android:id="@+id/btnTeacherlist"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile3">
+                app:layout_constraintTop_toBottomOf="@id/btnStudentlist">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Students List"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teachers List"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile5"
+                android:id="@+id/btnAnnouncement"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile4">
+                app:layout_constraintTop_toBottomOf="@id/btnTeacherlist">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Teachers List"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Announcement"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile6"
+                android:id="@+id/btnMsgToTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile5">
+                app:layout_constraintTop_toBottomOf="@id/btnAnnouncement">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Announcement"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register New Student"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
 
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tile7"
+                android:id="@+id/btnExam"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
-                app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile6">
+                app:layout_constraintTop_toBottomOf="@id/btnMsgToTeacher">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Message to Teachers"
-
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
                         />
+
                 </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/tile8"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
-                app:cardBackgroundColor="@color/c5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tile7">
-
-                <LinearLayout
+                <View
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:text="Exam Centre"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tile_book" />
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Exam Center"
-
-                        />
-                </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
