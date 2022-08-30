@@ -19,7 +19,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <ImageView
+        android:id="@+id/iv_staffnotify"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heading"
+        app:layout_constraintEnd_toStartOf="@id/iv_staffprofile"
+        app:layout_constraintTop_toTopOf="@+id/heading"
+        android:src="@drawable/ic_baseline_notifications_24" />
 
     <ImageView
         android:id="@+id/iv_staffprofile"
@@ -67,7 +76,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
-                android:text="300"
                 android:textColor="#777474"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -110,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
-                android:text="20"
+
                 android:textColor="#777474"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -144,17 +152,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
-                android:text="Batches"
+                android:text="Staffs"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/item1_batch_count"
+                android:id="@+id/item1_staff_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/amaranth"
-                android:text="4"
+
                 android:textColor="#777474"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -224,12 +232,50 @@
                 </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnRegStudent"
+                android:id="@+id/btnTimetable"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnFee">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time Table"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnRegStudent"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnTimetable">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -451,7 +497,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Register New Student"
+                    android:text="Connect To a Teacher"
                     android:fontFamily="@font/amaranth"
                     android:textSize="26dp"
                     android:layout_gravity="center"
@@ -499,6 +545,86 @@
 
 
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnAds"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnExam">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Advertisement"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnAlumni"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnAds">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/board"
+                        />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#90000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alumni"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"/>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

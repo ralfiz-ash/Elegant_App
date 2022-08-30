@@ -18,7 +18,7 @@ class FeedbackAdapter(
             {
                 fun bind(item:feedbackModel){
                     binding.apply {
-                        tvName.setText(item.s_name)
+                        tvStudentId.setText(item.s_id)
                         tvfeedback.setText(item.content)
 
                     }

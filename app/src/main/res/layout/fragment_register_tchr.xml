@@ -64,7 +64,7 @@
                 app:layout_constraintTop_toBottomOf="@id/etTname" />
 
             <EditText
-                android:id="@+id/etParentName"
+                android:id="@+id/etTexperience"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -88,7 +88,7 @@
                 android:paddingStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etParentName" />
+                app:layout_constraintTop_toBottomOf="@id/etTexperience" />
 
             <EditText
                 android:id="@+id/etTemail"
@@ -178,7 +178,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/etAdhar"
+                android:id="@+id/etTAdhar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -203,7 +203,7 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etAdhar" />
+                app:layout_constraintTop_toBottomOf="@+id/etTAdhar" />
 
             <EditText
                 android:id="@+id/etTinchargeclass"
@@ -272,12 +272,15 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llMedium" />
+
             <LinearLayout
                 android:id="@+id/llDivision"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDivisionselector">
 
@@ -286,8 +289,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="A"
-                    />
+                    android:text="A" />
 
                 <CheckBox
                     android:id="@+id/cbB"
@@ -296,19 +298,43 @@
                     android:text="B"
 
                     />
+
                 <CheckBox
                     android:id="@+id/cbC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="C"
-                    />
+                    android:text="C" />
 
                 <CheckBox
                     android:id="@+id/cbD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="D"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/cbE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/cbF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="F"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/cbG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="G"
 
                     />
 
@@ -328,44 +354,75 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llDivision" />
+
+
+            <Button
+                android:id="@+id/btn_T_Loadpicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="0"
+                android:text="Choose Picture"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUpload_Heading"
+                app:layout_constraintWidth_percent="0.3" />
+
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_weight="1"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/curved"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUpload_Heading"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/btn_T_Loadpicture" />
+
+
             <Button
-                android:id="@+id/btn_T_Loadpicture"
-                android:layout_width="0dp"
+                android:id="@+id/btn_Upload"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintWidth_percent="0.3"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:text="Load Picture"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
+                android:alpha="1"
+                android:background="@drawable/app_btn"
+                android:fontFamily="@font/amaranth"
+                android:text="Upload"
+                android:textAllCaps="false"
+                android:textSize="18dp"
                 app:layout_constraintStart_toEndOf="@id/image"
-                app:layout_constraintTop_toTopOf="@id/image"/>
-
-
+                app:layout_constraintTop_toTopOf="@+id/image" />
+            <TextView
+                android:id="@+id/successText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/amaranth"
+                android:drawableEnd="@drawable/complete"
+                android:text="Upload Successful"
+                android:textSize="16dp"
+                android:alpha="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/btn_Upload"
+                app:layout_constraintTop_toBottomOf="@id/btn_Upload" />
 
             <Button
-                android:id="@+id/btn_Tincharge_submit"
+                android:id="@+id/btn_addTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="24dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
                 android:background="@drawable/app_btn"
                 android:fontFamily="@font/amaranth"
-                android:text="Submit"
+                android:text="Add To Elegant Family"
                 android:textAllCaps="false"
                 android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image" />
 

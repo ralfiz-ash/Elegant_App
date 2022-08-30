@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_THomeFragment_to_queryFragment"
             app:destination="@id/queryFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
     </fragment>
     <fragment
         android:id="@+id/assignmentFragment"
@@ -111,6 +114,21 @@
         <action
             android:id="@+id/action_staff_HomeFragment_to_feeMgtFragment"
             app:destination="@id/feeMgtFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_notififyfromAdminFragment"
+            app:destination="@id/notififyfromAdminFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_timetableFragment"
+            app:destination="@id/timetableFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_examFragment"
+            app:destination="@id/examFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_advertisementFragment"
+            app:destination="@id/advertisementFragment" />
+        <action
+            android:id="@+id/action_staff_HomeFragment_to_alumniFragment"
+            app:destination="@id/alumniFragment" />
 
     </fragment>
     <fragment
@@ -141,7 +159,11 @@
         android:id="@+id/student_listFragment"
         android:name="com.example.elegant_app.staff.Student_listFragment"
         android:label="fragment_student_list"
-        tools:layout="@layout/fragment_student_list" />
+        tools:layout="@layout/fragment_student_list" >
+        <action
+            android:id="@+id/action_student_listFragment_to_studentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/admin_HomeFragment"
         android:name="com.example.elegant_app.admin.Admin_HomeFragment"
@@ -193,15 +215,86 @@
         android:id="@+id/staff_listFragment"
         android:name="com.example.elegant_app.admin.Staff_listFragment"
         android:label="fragment_staff_list"
-        tools:layout="@layout/fragment_staff_list" />
+        tools:layout="@layout/fragment_staff_list" >
+        <action
+            android:id="@+id/action_staff_listFragment_to_staffProfileFragment"
+            app:destination="@id/staffProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/teacherProfileFragment"
         android:name="com.example.elegant_app.staff.TeacherProfileFragment"
         android:label="fragment_teacher_profile"
-        tools:layout="@layout/fragment_teacher_profile" />
+        tools:layout="@layout/fragment_teacher_profile" >
+        <argument
+            android:name="data"
+            app:argType="com.example.elegant_app.staff.TeacherModel" />
+        
+    </fragment>
     <fragment
         android:id="@+id/feeMgtFragment"
         android:name="com.example.elegant_app.staff.FeeMgtFragment"
         android:label="fragment_fee_mgt"
         tools:layout="@layout/fragment_fee_mgt" />
+    <fragment
+        android:id="@+id/notififyfromAdminFragment"
+        android:name="com.example.elegant_app.staff.notififyfromAdminFragment"
+        android:label="fragment_notififyfrom_admin"
+        tools:layout="@layout/fragment_notififyfrom_admin" />
+    <fragment
+        android:id="@+id/studentProfileFragment"
+        android:name="com.example.elegant_app.staff.StudentProfileFragment"
+        android:label="fragment_student_profile"
+        tools:layout="@layout/fragment_student_profile" >
+    <argument
+        android:name="data"
+        app:argType="com.example.elegant_app.staff.StudentModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffProfileFragment"
+        android:name="com.example.elegant_app.admin.StaffProfileFragment"
+        android:label="fragment_staff_profile"
+        tools:layout="@layout/fragment_staff_profile" >
+        <argument
+            android:name="data"
+            app:argType="com.example.elegant_app.admin.StaffModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.example.elegant_app.staff.TimetableFragment"
+        android:label="fragment_timetable"
+        tools:layout="@layout/fragment_timetable" />
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="com.example.elegant_app.teacher.UploadFragment"
+        android:label="fragment_upload"
+        tools:layout="@layout/fragment_upload" />
+    <fragment
+        android:id="@+id/examFragment"
+        android:name="com.example.elegant_app.staff.ExamFragment"
+        android:label="fragment_exam"
+        tools:layout="@layout/fragment_exam" />
+    <fragment
+        android:id="@+id/advertisementFragment"
+        android:name="com.example.elegant_app.staff.AdvertisementFragment"
+        android:label="fragment_advertisement"
+        tools:layout="@layout/fragment_advertisement" >
+        <action
+            android:id="@+id/action_advertisementFragment_self"
+            app:destination="@id/advertisementFragment" />
+        <!--<argument
+            android:name="data"
+            app:argType="com.example.elegant_app.staff.AdModel" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/alumniFragment"
+        android:name="com.example.elegant_app.staff.AlumniFragment"
+        android:label="fragment_alumni"
+        tools:layout="@layout/fragment_alumni" >
+    <action
+        android:id="@+id/action_alumniFragment_to_StudentProfileFragment"
+        app:destination="@id/studentProfileFragment"/>
+        <action
+            android:id="@+id/action_alumniFragment_to_TeacherProfileFragment"
+            app:destination="@id/teacherProfileFragment"/>
+    </fragment>
 </navigation>

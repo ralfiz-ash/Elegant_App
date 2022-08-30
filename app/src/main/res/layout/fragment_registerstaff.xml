@@ -187,29 +187,59 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etSAdhar" />
+
+
+            <Button
+                android:id="@+id/btn_Loadpicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="0"
+                android:text="Choose Picture"
+               app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUpload_Heading" />
             <ImageView
                 android:id="@+id/Staffimage"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_weight="1"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                tools:srcCompat="@tools:sample/avatars"
+                android:background="@drawable/curved"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUpload_Heading"
+                app:layout_constraintTop_toBottomOf="@+id/btn_Loadpicture"
                 />
+
             <Button
-                android:id="@+id/btn_Loadpicture"
-                android:layout_width="0dp"
+                android:id="@+id/btn_Upload"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintWidth_percent="0.3"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:text="Load Picture"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
+                android:alpha="1"
+                android:background="@drawable/app_btn"
+                android:fontFamily="@font/amaranth"
+                android:text="Upload"
+                android:textAllCaps="false"
+                android:textSize="18dp"
                 app:layout_constraintStart_toEndOf="@id/Staffimage"
                 app:layout_constraintTop_toTopOf="@id/Staffimage"/>
+            <TextView
+                android:id="@+id/successText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/amaranth"
+                android:drawableEnd="@drawable/complete"
+                android:text="Upload Successful"
+                android:textSize="16dp"
+                android:alpha="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/btn_Upload"
+                app:layout_constraintTop_toBottomOf="@id/btn_Upload" />
 
 
 

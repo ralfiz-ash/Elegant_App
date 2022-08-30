@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/ivBanner"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="120dp"
         android:scaleType="centerCrop"
         android:src="@drawable/sky"
         app:layout_constraintStart_toStartOf="parent"
@@ -267,6 +267,42 @@
             app:layout_constraintTop_toBottomOf="@id/bloodtxt" />
 
         <TextView
+            android:id="@+id/dobtxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Date Of Birth"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bloodtxt" />
+
+        <TextView
+            android:id="@+id/dobValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="10/07/1997"
+            android:textAlignment="viewEnd"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dobtxt" />
+
+        <View
+            android:id="@+id/v13"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/adhartxt" />
+
+        <TextView
             android:id="@+id/adhartxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -276,7 +312,7 @@
             android:textAlignment="viewStart"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bloodtxt" />
+            app:layout_constraintTop_toBottomOf="@id/dobtxt" />
 
         <TextView
             android:id="@+id/adharValue"
@@ -285,11 +321,12 @@
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="812300454367"
+            android:text="123456789012"
             android:textAlignment="viewEnd"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/adhartxt" />
+
 
         <View
             android:id="@+id/v7"
@@ -300,7 +337,7 @@
             android:background="@color/black"
             app:layout_constraintEnd_toEndOf="@id/NameValue"
             app:layout_constraintStart_toStartOf="@+id/Nametxt"
-            app:layout_constraintTop_toBottomOf="@id/adhartxt" />
+            app:layout_constraintTop_toBottomOf="@id/dobtxt" />
 
         <TextView
             android:id="@+id/gendertxt"
@@ -385,7 +422,7 @@
             android:textAlignment="viewStart"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/v9" />
+            app:layout_constraintTop_toBottomOf="@id/addresstxt" />
 
         <TextView
             android:id="@+id/inchargeValue"
@@ -421,7 +458,6 @@
             android:text="Division"
             android:textAlignment="viewStart"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/inchargetxt" />
 
@@ -437,6 +473,45 @@
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/divtxt" />
+
+        <View
+            android:id="@+id/v14"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/divtxt" />
+
+        <TextView
+            android:id="@+id/mediumtxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="32dp"
+            android:ellipsize="start"
+            android:text="Medium"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divtxt" />
+
+        <TextView
+            android:id="@+id/mediumValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Malayalam"
+            android:textAlignment="viewEnd"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mediumtxt" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

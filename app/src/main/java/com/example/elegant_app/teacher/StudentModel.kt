@@ -1,6 +1,7 @@
 package com.example.elegant_app.teacher
 
-data class StudentModel(
-    var id:Int,
-    var name:String
+data class EStudentModel(
+    var regno:String?=null,
+    var name:String?=null,
+    var standard:String?=null,
 )

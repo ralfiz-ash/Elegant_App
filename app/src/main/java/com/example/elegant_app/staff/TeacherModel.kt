@@ -1,13 +1,16 @@
 package com.example.elegant_app.staff
 
 import android.net.Uri
+import android.os.Parcelable
 import android.provider.ContactsContract
+import java.io.Serializable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class TeacherModel(
-    var id:Int,
     var name:String,
     var qualification:String?=null,
-    var experience: Float?=null,
+    var experience: String?=null,
     var mobile: String?=null,
     var email: String?=null,
     var blood: String?=null,
@@ -18,6 +21,6 @@ data class TeacherModel(
     var standard: String?=null,
     var medium: String?=null,
     var division: String?=null,
-    var photo: Uri?=null,
-
-)
+    var photo: String?=null,
+    var doc_id: String?=null,
+):Parcelable

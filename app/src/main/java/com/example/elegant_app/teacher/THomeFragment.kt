@@ -37,6 +37,7 @@ class THomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val media= ContextCompat.getDrawable(requireContext(),R.drawable.messi)
         Glide.with(this.binding.profileImage).load(media).apply(RequestOptions.circleCropTransform()).into(binding.profileImage)
 
@@ -46,7 +47,8 @@ class THomeFragment : Fragment() {
             TeacherCardModel(3,"Queries",R.color.c3),
             TeacherCardModel(4,"Mark list",R.color.c4),
             TeacherCardModel(5,"Profile view",R.color.c5),
-            TeacherCardModel(6,"Time Table",R.color.c6)
+            TeacherCardModel(6,"Time Table",R.color.c6),
+            TeacherCardModel(7,"Study Materials",R.color.c2)
 
         )
 
@@ -66,6 +68,7 @@ class THomeFragment : Fragment() {
                 3 ->findNavController().navigate(THomeFragmentDirections.actionTHomeFragmentToQueryFragment())
                 4 ->findNavController().navigate(THomeFragmentDirections.actionTHomeFragmentToMarklistFragment())
                 5 ->findNavController().navigate(THomeFragmentDirections.actionTHomeFragmentToViewProfileFragment())
+                7 ->findNavController().navigate(THomeFragmentDirections.actionTHomeFragmentToUploadFragment())
             }
         }
 

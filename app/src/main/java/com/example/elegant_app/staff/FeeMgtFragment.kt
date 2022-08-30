@@ -8,9 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.elegant_app.R
 import com.example.elegant_app.databinding.FragmentFeeMgtBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import java.time.Duration
 import java.util.*
 import kotlin.properties.Delegates
@@ -19,10 +23,14 @@ class FeeMgtFragment : Fragment() {
 lateinit var binding:FragmentFeeMgtBinding
     lateinit var selected_paiddate:String
     lateinit var studentName:String
+    lateinit var studentClass:String
     lateinit var std:String
     lateinit var division:String
-    var amount by Delegates.notNull<Float>()
+    lateinit var amount :String
     lateinit var month:String
+    private var firebaseStore: FirebaseStorage? = null
+    private var storageReference: StorageReference? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +41,9 @@ lateinit var binding:FragmentFeeMgtBinding
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        firebaseStore = FirebaseStorage.getInstance()
+        storageReference = FirebaseStorage.getInstance().reference
+
         binding=FragmentFeeMgtBinding.inflate(layoutInflater,container,false)
         setupSpinner_For_feeclass()
         setupSpinner_For_feedivision()
@@ -73,9 +84,36 @@ lateinit var binding:FragmentFeeMgtBinding
 
         binding.btnSubmit.setOnClickListener(){
             studentName=binding.etFeeSName.text.toString()
-            amount=binding.etFeeAmount.text.toString().toFloat()
-            FeeModel(7,studentName,std,amount,selected_paiddate,month)
-            Snackbar.make(it,"Fee added successfully",Snackbar.LENGTH_LONG).show()
+            amount=binding.etFeeAmount.text.toString()
+            studentClass="${std} - ${division}"
+
+           /* FeeModel(7,studentName,std,amount,selected_paiddate,month)
+            Snackbar.make(it,"Fee added successfully",Snackbar.LENGTH_LONG).show()*/
+
+           if (FeeFormValidate())
+           {
+               val fireStoreDatabase = FirebaseFirestore.getInstance()
+               val obj = FeeModel(studentName,studentClass,month,amount,selected_paiddate) // obj of modelclass
+
+               fireStoreDatabase.collection("Fee_Paid")
+                   .add(obj)
+                   .addOnSuccessListener {
+                       Toast.makeText(requireContext(), "Data added", Toast.LENGTH_LONG).show()
+                       binding.etFeeSName.text.clear()
+                       binding.etFeeAmount.text.clear()
+                       binding.etFeepaidDate.text.clear()
+
+                       //Log.d(TAG, "Added document with ID ${it.id}")
+                   }
+                   .addOnFailureListener { exception ->
+                       Toast.makeText(requireContext(), "Error Occured", Toast.LENGTH_LONG).show()
+                       //Log.w(TAG, "Error adding document $exception")
+                   }
+
+               Snackbar.make(it,"Fee added successfully",Snackbar.LENGTH_LONG).show()
+
+           }
+
 
         }
     }
@@ -155,6 +193,24 @@ lateinit var binding:FragmentFeeMgtBinding
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Code to perform some action when nothing is selected
             }
+        }
+
+    }
+
+    private fun FeeFormValidate(): Boolean{
+        if (
+            binding.etFeeSName.text.isNotBlank() && studentClass.isNotBlank() && month.isNotBlank()  &&
+            amount.isNotBlank() && selected_paiddate.isNotBlank()
+        )
+        {
+            return true
+        }
+        else
+        {
+            Toast.makeText(requireContext(), "All fields are mandatory", Toast.LENGTH_LONG).show()
+           // Snackbar.make(it,"Fee added successfully",Snackbar.LENGTH_LONG).show()
+            return false
+
         }
 
     }

@@ -35,19 +35,35 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <EditText
+                android:id="@+id/etReg_no"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/curved"
+                android:hint="Register Number"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeading"/>
+
            <EditText
-               android:id="@+id/etTName"
+               android:id="@+id/etstName"
                android:layout_width="match_parent"
                android:layout_height="50dp"
                android:layout_marginStart="24dp"
-               android:layout_marginTop="32dp"
+               android:layout_marginTop="16dp"
                android:layout_marginEnd="24dp"
                android:background="@drawable/curved"
                android:hint="Student name"
                android:paddingStart="10dp"
+               android:textColor="@color/black"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/tvHeading"
+               app:layout_constraintTop_toBottomOf="@id/etReg_no"
                />
 
             <EditText
@@ -60,9 +76,10 @@
                 android:background="@drawable/curved"
                 android:hint="School Name"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTName" />
+                app:layout_constraintTop_toBottomOf="@id/etstName" />
 
             <EditText
                 android:id="@+id/etParentName"
@@ -74,11 +91,12 @@
                 android:background="@drawable/curved"
                 android:hint="Parent Name"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etSchool" />
             <EditText
-                android:id="@+id/etTmob"
+                android:id="@+id/etstmob"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -88,12 +106,13 @@
                 android:hint="@string/Tmobile"
                 android:inputType="phone"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etParentName" />
 
             <EditText
-                android:id="@+id/etTemail"
+                android:id="@+id/etstemail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -102,12 +121,13 @@
                 android:background="@drawable/curved"
                 android:hint="@string/Temail"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTmob" />
+                app:layout_constraintTop_toBottomOf="@id/etstmob" />
 
             <EditText
-                android:id="@+id/etTblood"
+                android:id="@+id/etstblood"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -116,11 +136,12 @@
                 android:background="@drawable/curved"
                 android:hint="@string/Tblood"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTemail" />
+                app:layout_constraintTop_toBottomOf="@id/etstemail" />
             <EditText
-                android:id="@+id/etTaddress"
+                android:id="@+id/etstaddress"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -129,9 +150,10 @@
                 android:background="@drawable/curved"
                 android:hint="@string/Taddress"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTblood" />
+                app:layout_constraintTop_toBottomOf="@id/etstblood" />
 
             <EditText
                 android:id="@+id/etStudentdob"
@@ -142,12 +164,13 @@
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/curved"
                 android:hint="@string/Tdob"
+                android:textColor="@color/black"
                 android:focusable="false"
                 android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
                 android:paddingStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTaddress" />
+                app:layout_constraintTop_toBottomOf="@id/etstaddress" />
 
             <RadioGroup
                 android:id="@+id/radioGroup_Gender"
@@ -157,7 +180,6 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-
                 android:background="@drawable/curved"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etStudentdob"
@@ -181,7 +203,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/etAdhar"
+                android:id="@+id/etstAdhar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -190,6 +212,7 @@
                 android:background="@drawable/curved"
                 android:hint="Adhar Number"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/radioGroup_Gender" />
@@ -206,10 +229,10 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etAdhar" />
+                app:layout_constraintTop_toBottomOf="@+id/etstAdhar" />
 
             <EditText
-                android:id="@+id/etTinchargeclass"
+                android:id="@+id/etstclass"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -218,6 +241,7 @@
                 android:background="@drawable/curved"
                 android:hint="Class"
                 android:paddingStart="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etAcademicHead" />
@@ -234,7 +258,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etTinchargeclass" />
+                app:layout_constraintTop_toBottomOf="@+id/etstclass" />
             <LinearLayout
                 android:id="@+id/llMedium"
                 android:layout_width="match_parent"
@@ -286,41 +310,70 @@
                 android:id="@+id/llDivision"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="24dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDivisionselector">
 
-                <CheckBox
-                    android:id="@+id/cbA"
+                <RadioGroup
+                    android:id="@+id/radioGroup_Division"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="A"
-                    />
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true">
 
-                <CheckBox
-                    android:id="@+id/cbB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="B"
+                    <RadioButton
+                        android:id="@+id/rbA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="A"
+                        />
 
-                    />
-                <CheckBox
-                    android:id="@+id/cbC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="C"
-                    />
+                    <RadioButton
+                        android:id="@+id/rbB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        android:layout_centerInParent="true"
+                        />
+                    <RadioButton
+                        android:id="@+id/rbC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C"
+                        android:layout_centerInParent="true"
+                        />
+                    <RadioButton
+                        android:id="@+id/rbD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="D"
+                        android:layout_centerInParent="true"
+                        />
+                    <RadioButton
+                        android:id="@+id/rbE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E"
+                        android:layout_centerInParent="true"
+                        />
+                    <RadioButton
+                        android:id="@+id/rbFF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="F"
+                        android:layout_centerInParent="true"
+                        />
+                    <RadioButton
+                        android:id="@+id/rbG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="G"
+                        android:layout_centerInParent="true"
+                        />
+                </RadioGroup>
 
-                <CheckBox
-                    android:id="@+id/cbD"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="D"
 
-                    />
 
             </LinearLayout>
 
@@ -338,30 +391,61 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llDivision" />
+
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_weight="1"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/curved"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUpload_Heading"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/btn_Loadpicture" />
+
             <Button
                 android:id="@+id/btn_Loadpicture"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintWidth_percent="0.3"
                 android:layout_gravity="center"
-                android:layout_weight="0"
-                android:text="Load Picture"
                 android:layout_marginStart="24dp"
-                app:layout_constraintStart_toEndOf="@id/image"
-                app:layout_constraintTop_toTopOf="@id/image"/>
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="0"
+                android:text="Select picture"
+                app:layout_constraintBottom_toTopOf="@+id/image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUpload_Heading"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <Button
+                android:id="@+id/btn_Upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/app_btn"
+                android:fontFamily="@font/amaranth"
+                android:text="Upload"
+                android:alpha="1"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/btn_Loadpicture" />
 
 
+            <TextView
+                android:id="@+id/successText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/amaranth"
+                android:drawableEnd="@drawable/complete"
+                android:text="Upload Successful"
+                android:textSize="16dp"
+                android:alpha="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/btn_Upload"
+                app:layout_constraintTop_toBottomOf="@id/btn_Upload" />
 
             <Button
                 android:id="@+id/btn_Add_student"
@@ -379,6 +463,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image" />
+
 
 
 

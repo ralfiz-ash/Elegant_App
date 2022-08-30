@@ -1,12 +1,14 @@
 package com.example.elegant_app.admin
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.elegant_app.databinding.TutorListBinding
 import com.example.elegant_app.staff.TeacherAdapter
 import com.example.elegant_app.staff.TeacherModel
+import com.google.firebase.storage.FirebaseStorage
 
 class StaffAdapter(
     private val context: Context,
@@ -20,11 +22,21 @@ class StaffAdapter(
         {
             fun bind(item:StaffModel){
                 binding.apply {
-                    dp.setImageURI(item.photo)
+                    val imageRef = item.photo?.let {
+                        FirebaseStorage.getInstance().getReferenceFromUrl(it)
+                    }
+                    imageRef?.getBytes(10 * 1024 * 1024)?.addOnSuccessListener {
+                        val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
+                        dp.setImageBitmap(bitmap)
+
+
+                    }?.addOnFailureListener {
+                        // Handle any errors
+                    }
                     dpTitle.setText(item.name)
 
                     MainCard.setOnClickListener(){
-                        itemClick?.invoke(Stafflist!![adapterPosition])
+                        itemClick?.invoke(item)
                     }
                 }
             }

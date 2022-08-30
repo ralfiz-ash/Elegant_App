@@ -10,9 +10,7 @@
         android:id="@+id/clSub"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <TextView
@@ -41,6 +39,7 @@
             android:paddingStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvasmntHeading" />
+
         <EditText
             android:id="@+id/etTasmnttopic"
             android:layout_width="match_parent"
@@ -53,6 +52,7 @@
             android:paddingStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTasmntsub" />
+
         <EditText
             android:id="@+id/etTasmntdate"
             android:layout_width="match_parent"
@@ -61,11 +61,24 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/curved"
+            android:focusable="false"
             android:hint="@string/etTasmntdate"
             android:paddingStart="10dp"
-            android:focusable="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etTasmnttopic" />
+
+        <EditText
+            android:id="@+id/etTasmntStd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/curved"
+            android:hint="Class and Division"
+            android:paddingStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTasmntdate" />
 
 
         <Button
@@ -82,7 +95,32 @@
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etTasmntdate" />
+            app:layout_constraintTop_toBottomOf="@id/etTasmntStd" />
+
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/amaranth"
+            android:text="Assignments History"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_Tasmnt" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTasks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/feedback_tile"
+            app:layout_constraintTop_toBottomOf="@id/tvHistory" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

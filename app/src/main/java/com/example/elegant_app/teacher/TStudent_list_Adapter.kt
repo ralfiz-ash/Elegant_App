@@ -1,26 +1,31 @@
-package com.example.elegant_app.teacher
+package com.example.elegant_app.staff
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.elegant_app.databinding.StudentListBinding
+import com.example.elegant_app.teacher.EStudentModel
 
 class TStudent_list_Adapter(
     private val context: Context,
-    private var student_list: List<StudentModel>) :
+    private var student_list: MutableList<EStudentModel>
+) :
     RecyclerView.Adapter<TStudent_list_Adapter.TstudentlistviewHolder>()
 {
-    var listItemClick : ((StudentModel) -> Unit)? = null
+    var listItemClick : ((EStudentModel) -> Unit)? = null
 
 
     inner class TstudentlistviewHolder(val binding: StudentListBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: StudentModel) {
+        fun bind(item: EStudentModel) {
             binding.apply {
                 tvTstudentName.text=item.name
+
                 rvTstudentList.setOnClickListener(){
                     listItemClick?.invoke(student_list!![adapterPosition])
                 }
+
+
             }
 
         }
