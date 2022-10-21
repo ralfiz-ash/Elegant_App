@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1f5f8"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".staff.FeeMgtFragment">
 
@@ -29,6 +30,7 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/curved"
         android:hint="Student name"
+        android:textColor="@color/black"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,11 +48,12 @@
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/Spinner_feeDiv"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/curved"
-        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/etFee_SName"
         app:layout_constraintStart_toEndOf="@id/Spinner_feeClass"
         app:layout_constraintTop_toBottomOf="@+id/etFee_SName" />
 
@@ -71,6 +74,7 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/curved"
         android:hint="Enter Amount"
+        android:textColor="@color/black"
         android:paddingStart="10dp"
         app:layout_constraintStart_toStartOf="@+id/Spinner_feeMonth"
         app:layout_constraintTop_toBottomOf="@id/Spinner_feeMonth" />
@@ -84,23 +88,24 @@
         android:background="@drawable/curved"
         android:focusable="false"
         android:hint="Paid Date"
+        android:textColor="@color/black"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="@+id/Spinner_feeMonth"
         app:layout_constraintStart_toEndOf="@id/etFeeAmount"
         app:layout_constraintTop_toBottomOf="@+id/Spinner_feeMonth" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_height="48dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginHorizontal="16dp"
         android:background="@drawable/app_btn"
         android:fontFamily="@font/amaranth"
+        android:gravity="center"
         android:text="Add to Fee List"
         android:textAllCaps="false"
-        android:textSize="18dp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etFeeAmount" />

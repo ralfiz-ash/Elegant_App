@@ -4,31 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue_A200"
+    android:background="@color/white"
     tools:context=".staff.AlumniFragment">
 
-    <Button
-        android:id="@+id/buttonStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Students"
-        app:layout_constraintEnd_toStartOf="@+id/buttonTutor"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- <Button
+         android:id="@+id/buttonStudent"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Students"
+         app:layout_constraintEnd_toStartOf="@+id/buttonTutor"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonTutor"
+     <Button
+         android:id="@+id/buttonTutor"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Our_Tutors"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintStart_toEndOf="@+id/buttonStudent" />-->
+
+    <View
+        android:id="@+id/buttonStudent"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvButtonStudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Our_Tutors"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/amaranth"
+        android:text="Students"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonStudent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonStudent"
+        app:layout_constraintStart_toStartOf="@id/buttonStudent"
+        app:layout_constraintTop_toTopOf="@+id/buttonStudent" />
+
+    <View
+        android:id="@+id/lineA"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#950737"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/buttonStudent"
+        app:layout_constraintStart_toStartOf="@id/buttonStudent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <View
+        android:id="@+id/buttonTutor"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:alpha="0.5"
+        android:elevation="16dp"
+        app:layout_constraintStart_toEndOf="@id/buttonStudent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonStudent" />
+        app:layout_constraintWidth_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvButtonTutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tutors"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:fontFamily="@font/amaranth"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTutor"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTutor"
+        app:layout_constraintStart_toStartOf="@id/buttonTutor"
+        app:layout_constraintTop_toTopOf="@+id/buttonTutor" />
+
+    <View
+        android:id="@+id/lineB"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#950737"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/buttonTutor"
+        app:layout_constraintStart_toStartOf="@id/buttonTutor"
+        app:layout_constraintWidth_percent="0.5" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStudentCards"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:background="@color/light_blue_A200"
         tools:listitem="@layout/tutor_list"
         app:layout_constraintTop_toBottomOf="@id/buttonStudent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +105,13 @@
 
 
         />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTeacherCards"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:background="@color/light_blue_A200"
         tools:listitem="@layout/tutor_list"
         app:layout_constraintTop_toBottomOf="@id/buttonStudent"
         app:layout_constraintStart_toStartOf="parent"

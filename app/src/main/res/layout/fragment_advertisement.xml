@@ -38,16 +38,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btn_Upload_Ads"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="@drawable/app_btn"
         android:fontFamily="@font/amaranth"
+        android:layout_marginHorizontal="16dp"
         android:text="Upload Ad"
         android:textAllCaps="false"
         android:textSize="18dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AdImage" />
 

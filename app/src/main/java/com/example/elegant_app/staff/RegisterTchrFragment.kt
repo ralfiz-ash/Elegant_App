@@ -13,6 +13,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.elegant_app.R
 import com.example.elegant_app.admin.StaffModel
 import com.example.elegant_app.databinding.FragmentRegisterTchrBinding
@@ -142,23 +145,22 @@ class RegisterTchrFragment : Fragment() {
                     }
                 }
 
-                println("@SIZE"+listMedium.size)
+                println("@SIZE" + listMedium.size)
             }
 
             //list for taking fn return of listdivision
-            var a:List<Any> = listOf(gettingDivision())
+            var a: List<Any> = listOf(gettingDivision())
 
 
-            btnTLoadpicture.setOnClickListener(){
+
+
+            CameraContainer.setOnClickListener() {
                 selectImage()
-            }
-
-            btnUpload.setOnClickListener(){
-                uploadImage()
             }
 
             btnAddTeacher.setOnClickListener() {
 
+                uploadImage()
                 teacherName = etTname.text.toString()
                 teacherQualification = etTqualif.text.toString()
                 teacherExperience = etTexperience.text.toString()
@@ -200,8 +202,8 @@ class RegisterTchrFragment : Fragment() {
                 teacherDivisions = divisionSelected.toString() // get in division
                 // Log.d("div", "List== ${divisionSelected}\nc:${teacherDivisions} ")
 
-                if(TeacherFormValidate())
-                {
+                if(TeacherFormValidate()) {
+
                     val fireStoreDatabase = FirebaseFirestore.getInstance()
                     val obj = TeacherModel(name = teacherName, qualification = teacherQualification, experience = teacherExperience, mobile = teacherMobile, email = teacherEmail, blood = teacherBlood, address = teacherAddress, dob = teacherDob, gender = teacherGender, adhar = teacherAdhar, standard = teacherClass,
                         medium = teacherMedium, division = teacherDivisions, photo = teacherEncodedstring)
@@ -217,7 +219,8 @@ class RegisterTchrFragment : Fragment() {
                             //Log.w(TAG, "Error adding document $exception")
                         }
 
-                    //Snackbar.make(,"Fee added successfully", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(requireView(), "Tutor Added Successfully", Snackbar.LENGTH_LONG)
+                        .show()
 
                 }
 
@@ -244,8 +247,15 @@ class RegisterTchrFragment : Fragment() {
 
             filePath = data.data
             try {
-                var bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, filePath)
+
+                var bitmap =
+                    MediaStore.Images.Media.getBitmap(requireContext().contentResolver, filePath)
                 binding.image.setImageBitmap(bitmap)
+
+                //val media= ContextCompat.getDrawable(requireContext(),R.drawable.messi)
+                Glide.with(this.binding.image).load(bitmap)
+                    .apply(RequestOptions.circleCropTransform()).into(binding.image)
+
 
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -255,17 +265,18 @@ class RegisterTchrFragment : Fragment() {
     }
 
     private fun uploadImage(){
-        if(filePath != null){
+        if(filePath != null) {
             val ref = storageReference?.child("Teacher_Images/" + UUID.randomUUID().toString())
             val uploadTask = ref?.putFile(filePath!!)
             Log.d("url", "teacher-uploadImage:${filePath} || ${ref} ->${uploadTask} ")
-            teacherEncodedstring= ref.toString()
-            binding.successText.alpha=1f
-            binding.btnUpload.alpha=0f
+            teacherEncodedstring = ref.toString()
+            Toast.makeText(requireContext(), "Picture Uploaded", Toast.LENGTH_SHORT).show()
+            //binding.successText.alpha=1f
+            //binding.btnUpload.alpha=0f
 
         }else{
             Toast.makeText(requireContext(), "Please Upload an Image", Toast.LENGTH_SHORT).show()
-            binding.btnUpload.alpha=1f
+            //binding.btnUpload.alpha=1f
         }
     }
 

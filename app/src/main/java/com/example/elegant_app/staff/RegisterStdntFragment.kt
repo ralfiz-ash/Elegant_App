@@ -14,6 +14,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.elegant_app.R
 import com.example.elegant_app.databinding.FragmentRegisterStdntBinding
 import com.google.android.material.snackbar.Snackbar
@@ -89,12 +91,16 @@ class RegisterStdntFragment : Fragment() {
                         val Student_Dob =
                             (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
                         binding.etStudentdob.setText(Student_Dob)
-                        selected_Dob=Student_Dob
+                        selected_Dob = Student_Dob
                     },
                     year, month, day
                 )
 
                 datePickerDialog.show()
+            }
+
+            CameraContainer.setOnClickListener() {
+                selectImage()
             }
 
             radioGroup.setOnCheckedChangeListener { group, checkedId ->
@@ -105,7 +111,7 @@ class RegisterStdntFragment : Fragment() {
                 selected_Gender = if (R.id.rbM == checkedId) "Male" else "Female"
                 Toast.makeText(requireContext(), selected_Gender, Toast.LENGTH_SHORT).show()
             }
-            radioGroupDivision.setOnCheckedChangeListener{group, checkedId ->
+            radioGroupDivision.setOnCheckedChangeListener { group, checkedId ->
                 when(checkedId){
                     R.id.rbA ->selected_Division
                     R.id.rbB ->selected_Division
@@ -119,26 +125,20 @@ class RegisterStdntFragment : Fragment() {
                 selected_Division="${binding.etstclass.text} ${selected_Division}"
             }
 
-            btnLoadpicture.setOnClickListener(){
-                selectImage()
-            }
-            btnUpload.setOnClickListener(){
-                uploadImage()
-            }
-
             btnAddStudent.setOnClickListener(){
+                uploadImage()
 
-                 name=binding.etstName.text.toString()
-                 regno=binding.etRegNo.text.toString()
+                name=binding.etstName.text.toString()
+                regno=binding.etRegNo.text.toString()
                 school=binding.etSchool.text.toString()
-                 parent=binding.etParentName.text.toString()
-                 mobile=binding.etstmob.text.toString()
-                 email=binding.etstemail.text.toString()
-                 blood=binding.etstblood.text.toString()
-                 address=binding.etstaddress.text.toString()
-                 adhar=binding.etstAdhar.text.toString()
+                parent=binding.etParentName.text.toString()
+                mobile=binding.etstmob.text.toString()
+                email=binding.etstemail.text.toString()
+                blood=binding.etstblood.text.toString()
+                address=binding.etstaddress.text.toString()
+                adhar=binding.etstAdhar.text.toString()
                 std=binding.etstclass.text.toString()
-                 //std=binding.etstclass.text.toString()
+                //std=binding.etstclass.text.toString()
 
                 if (studentFormValidate()) {
 
@@ -149,16 +149,27 @@ class RegisterStdntFragment : Fragment() {
                         .add(obj)
                         .addOnSuccessListener {
                             Toast.makeText(requireContext(), "Data added", Toast.LENGTH_LONG).show()
-                           /* binding.etDate.text.clear()
-                            binding.etTPostmessage.text.clear()*/
-
-                            //Log.d(TAG, "Added document with ID ${it.id}")
+                            Snackbar.make(
+                                requireView(),
+                                "Student Added Successfully ",
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                            binding.etstName.text.clear()
+                            binding.etRegNo.text.clear()
+                            binding.etSchool.text.clear()
+                            binding.etParentName.text.clear()
+                            binding.etstmob.text.clear()
+                            binding.etstemail.text.clear()
+                            binding.etstblood.text.clear()
+                            binding.etstaddress.text.clear()
+                            binding.etstAdhar.text.clear()
+                            binding.etstclass.text.clear()
                         }
                         .addOnFailureListener { exception ->
                             Toast.makeText(requireContext(), "Error Occured", Toast.LENGTH_LONG).show()
                             //Log.w(TAG, "Error adding document $exception")
                         }
-                    Snackbar.make(it,"Student Added ", Snackbar.LENGTH_LONG).show()
+                    //Snackbar.make(it,"Student Added Successfully ", Snackbar.LENGTH_LONG).show()
 
                 }
 
@@ -185,7 +196,8 @@ class RegisterStdntFragment : Fragment() {
             filePath = data.data
             try {
                 var bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, filePath)
-                binding.image.setImageBitmap(bitmap)
+                Glide.with(binding.image).load(bitmap).apply(RequestOptions.circleCropTransform())
+                    .into(binding.image)
 
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -200,12 +212,10 @@ class RegisterStdntFragment : Fragment() {
             val uploadTask = ref?.putFile(filePath!!)
             Log.d("url", "uploadImage:${filePath} || ${ref} ->${uploadTask} ")
             encodedstring= ref.toString()
-            binding.successText.alpha=1f
-            binding.btnUpload.alpha=0f
+
 
         }else{
             Toast.makeText(requireContext(), "Please Upload an Image", Toast.LENGTH_SHORT).show()
-            binding.btnUpload.alpha=1f
         }
     }
 
@@ -230,15 +240,9 @@ class RegisterStdntFragment : Fragment() {
 
     fun emailValidator(emailToText: String) : Boolean {
 
-        // extract the entered data from the EditText
-        //val emailToText = etMail.toString()
 
-        // Android offers the inbuilt patterns which the entered
-        // data from the EditText field needs to be compared with
-        // In this case the entered data needs to compared with
-        // the EMAIL_ADDRESS, which is implemented same below
         if (!emailToText.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailToText).matches()) {
-            Toast.makeText(requireContext(), "Email Validated !", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(requireContext(), "Email Validated !", Toast.LENGTH_SHORT).show()
             return true
         } else {
             Toast.makeText(requireContext(), "Enter valid Email address !", Toast.LENGTH_SHORT).show()

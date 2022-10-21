@@ -25,36 +25,40 @@ class Query_Adapter (
             fun bind(item: QueryModel) {
              binding.apply {
                     tvStudent.text = item.student
-                    tvDoubt.text = item.question
-                 tvAnswer.text=item.answer
-                 if (tvAnswer.text.equals("")){
-
-                 }else{
-                     answerSubmit.alpha=0f
-                     etAnswer.visibility=View.GONE
+                 tvDoubt.text = item.question
+                 tvReply.text = item.answer
+                 if (item.answer.equals("")) {
+                     answerSubmit.visibility = View.VISIBLE
+                     etAnswer.visibility = View.VISIBLE
+                 } else {
+                     answerSubmit.visibility = View.GONE
+                     etAnswer.visibility = View.GONE
                  }
 
-                    answerSubmit.setOnClickListener(){
+                 answerSubmit.setOnClickListener() {
 
-                        val a= etAnswer.text.toString()
-                        var obj=QueryModel(item.id,item.student,item.question,a)
-                        item?.answer?.let {
-                            tvAnswer.text=it
-                        }
-                        tvAnswer.text = item?.answer
-                        val db1 = FirebaseFirestore.getInstance()
-                        db1.collection("Doubt").document(item.id.toString()).set(obj).addOnSuccessListener {
-                            Toast.makeText( context,"Answer Submitted" ,Toast.LENGTH_SHORT).show()
-                        }.addOnFailureListener {
-                            Toast.makeText( context,it.toString() ,Toast.LENGTH_SHORT).show()
-                        }
+                     val a = etAnswer.text.toString()
+                     if (a != null) {
+                         var obj = QueryModel(item.id, item.student, item.question, a)
+                         item?.answer?.let {
+                             tvReply.text = it
+                         }
+                         tvReply.text = item?.answer
+                         val db1 = FirebaseFirestore.getInstance()
+                         db1.collection("Doubt").document(item.id.toString()).set(obj)
+                             .addOnSuccessListener {
+                                 Toast.makeText(context, "Answer Submitted", Toast.LENGTH_SHORT)
+                                     .show()
+                             }.addOnFailureListener {
+                                 Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
+                             }
+                         tvReply.visibility = View.VISIBLE
+                         answerSubmit.visibility = View.GONE
+                         etAnswer.visibility = View.GONE
+                         tvReply.text = a
 
-                        answerSubmit.alpha=0f
-                        etAnswer.visibility=View.GONE
-                        tvAnswer.text=a
 
-
-
+                     }
                     }
 
                    query.setOnClickListener(){

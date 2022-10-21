@@ -3,37 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1f5f8"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".staff.RegisterStdntFragment">
 
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/amaranth"
+        android:text="Register New Student"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@id/tvHeading">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clSub"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:background="@drawable/whitebox"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
-            <TextView
-                android:id="@+id/tvHeading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:fontFamily="@font/amaranth"
-                android:text="Register New Student"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                android:textStyle="bold"
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/round"
+                android:padding="4dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/account_box_24"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CameraContainer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                app:layout_constraintEnd_toEndOf="@id/image">
+
+                <ImageView
+                    android:id="@+id/cameraImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_baseline_photo_camera_24" />
+
+
+            </androidx.cardview.widget.CardView>
 
             <EditText
                 android:id="@+id/etReg_no"
@@ -48,23 +88,22 @@
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvHeading"/>
+                app:layout_constraintTop_toBottomOf="@id/image" />
 
-           <EditText
-               android:id="@+id/etstName"
-               android:layout_width="match_parent"
-               android:layout_height="50dp"
-               android:layout_marginStart="24dp"
-               android:layout_marginTop="16dp"
-               android:layout_marginEnd="24dp"
-               android:background="@drawable/curved"
-               android:hint="Student name"
-               android:paddingStart="10dp"
-               android:textColor="@color/black"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/etReg_no"
-               />
+            <EditText
+                android:id="@+id/etstName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/curved"
+                android:hint="Student name"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etReg_no" />
 
             <EditText
                 android:id="@+id/etSchool"
@@ -95,6 +134,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etSchool" />
+
             <EditText
                 android:id="@+id/etstmob"
                 android:layout_width="match_parent"
@@ -140,6 +180,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etstemail" />
+
             <EditText
                 android:id="@+id/etstaddress"
                 android:layout_width="match_parent"
@@ -182,24 +223,21 @@
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/curved"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etStudentdob"
-                >
+                app:layout_constraintTop_toBottomOf="@id/etStudentdob">
 
                 <RadioButton
                     android:id="@+id/rbM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="Male"
-                    />
+                    android:text="Male" />
 
                 <RadioButton
                     android:id="@+id/rbF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
-                    android:layout_centerInParent="true"
-                    />
+                    android:layout_centerInParent="true" />
             </RadioGroup>
 
             <EditText
@@ -259,6 +297,7 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etstclass" />
+
             <LinearLayout
                 android:id="@+id/llMedium"
                 android:layout_width="match_parent"
@@ -274,21 +313,19 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true">
 
-                <RadioButton
-                    android:id="@+id/rbMM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Malayalam"
-                    />
+                    <RadioButton
+                        android:id="@+id/rbMM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Malayalam" />
 
-                <RadioButton
-                    android:id="@+id/rbEM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="English"
-                    android:layout_centerInParent="true"
-                    />
+                    <RadioButton
+                        android:id="@+id/rbEM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="English"
+                        android:layout_centerInParent="true" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -306,6 +343,7 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llMedium" />
+
             <LinearLayout
                 android:id="@+id/llDivision"
                 android:layout_width="match_parent"
@@ -326,145 +364,71 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="A"
-                        />
+                        android:text="A" />
 
                     <RadioButton
                         android:id="@+id/rbB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="B"
-                        android:layout_centerInParent="true"
-                        />
+                        android:layout_centerInParent="true" />
+
                     <RadioButton
                         android:id="@+id/rbC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="C"
-                        android:layout_centerInParent="true"
-                        />
+                        android:layout_centerInParent="true" />
+
                     <RadioButton
                         android:id="@+id/rbD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="D"
-                        android:layout_centerInParent="true"
-                        />
+                        android:layout_centerInParent="true" />
+
                     <RadioButton
                         android:id="@+id/rbE"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="E"
-                        android:layout_centerInParent="true"
-                        />
+                        android:layout_centerInParent="true" />
+
                     <RadioButton
                         android:id="@+id/rbFF"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="F"
-                        android:layout_centerInParent="true"
-                        />
+                        android:layout_centerInParent="true" />
+
                     <RadioButton
                         android:id="@+id/rbG"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="G"
-                        android:layout_centerInParent="true"
-                        />
+                        android:layout_centerInParent="true" />
                 </RadioGroup>
-
 
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvUpload_Heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/amaranth"
-                android:text="Upload Photo"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llDivision" />
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_weight="1"
-                android:background="@drawable/curved"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_Loadpicture" />
-
-            <Button
-                android:id="@+id/btn_Loadpicture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_weight="0"
-                android:text="Select picture"
-                app:layout_constraintBottom_toTopOf="@+id/image"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUpload_Heading"
-                app:layout_constraintWidth_percent="0.3" />
-
-            <Button
-                android:id="@+id/btn_Upload"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/app_btn"
-                android:fontFamily="@font/amaranth"
-                android:text="Upload"
-                android:alpha="1"
-                android:textAllCaps="false"
-                android:textSize="18dp"
-                app:layout_constraintStart_toEndOf="@+id/image"
-                app:layout_constraintTop_toBottomOf="@+id/btn_Loadpicture" />
-
-
-            <TextView
-                android:id="@+id/successText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/amaranth"
-                android:drawableEnd="@drawable/complete"
-                android:text="Upload Successful"
-                android:textSize="16dp"
-                android:alpha="0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/btn_Upload"
-                app:layout_constraintTop_toBottomOf="@id/btn_Upload" />
-
-            <Button
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btn_Add_student"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/app_btn"
                 android:fontFamily="@font/amaranth"
                 android:text="Add To Elegant Family"
+                android:gravity="center"
                 android:textAllCaps="false"
-                android:textSize="18dp"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image" />
-
-
+                app:layout_constraintTop_toBottomOf="@+id/llDivision" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

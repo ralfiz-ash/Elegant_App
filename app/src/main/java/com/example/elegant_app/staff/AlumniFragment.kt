@@ -36,15 +36,24 @@ class AlumniFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonStudent.setOnClickListener(){
+        showStudentAlumni()
+        binding.rvStudentCards.visibility = View.VISIBLE
+        binding.rvTeacherCards.visibility = View.GONE
+        binding.lineA.visibility = View.VISIBLE
+
+        binding.buttonStudent.setOnClickListener() {
             showStudentAlumni()
-            binding.rvStudentCards.visibility=View.VISIBLE
-            binding.rvTeacherCards.visibility=View.GONE
+            binding.rvStudentCards.visibility = View.VISIBLE
+            binding.rvTeacherCards.visibility = View.GONE
+            binding.lineA.visibility = View.VISIBLE
+            binding.lineB.visibility = View.GONE
         }
-        binding.buttonTutor.setOnClickListener(){
+        binding.buttonTutor.setOnClickListener() {
             showTutorAlumni()
-            binding.rvStudentCards.visibility=View.GONE
-            binding.rvTeacherCards.visibility=View.VISIBLE
+            binding.rvStudentCards.visibility = View.GONE
+            binding.rvTeacherCards.visibility = View.VISIBLE
+            binding.lineB.visibility = View.VISIBLE
+            binding.lineA.visibility = View.GONE
         }
 
     }

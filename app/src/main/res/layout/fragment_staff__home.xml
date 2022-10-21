@@ -14,7 +14,8 @@
         android:text=" Elegant Staff "
         android:fontFamily="@font/amaranth"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -196,8 +197,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnFee"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -226,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:text="Fee Management"
                         android:fontFamily="@font/amaranth"
-                        android:textSize="26dp"
+                        android:textSize="24dp"
                         android:layout_gravity="center"
                         android:textColor="@color/white"/>
                 </androidx.cardview.widget.CardView>
@@ -234,8 +237,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnTimetable"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnFee">
 
@@ -243,6 +248,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -262,7 +268,7 @@
                     android:layout_height="wrap_content"
                     android:text="Time Table"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -272,8 +278,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnRegStudent"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnTimetable">
 
@@ -281,6 +289,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -300,7 +309,7 @@
                     android:layout_height="wrap_content"
                     android:text="Register New Student"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -310,8 +319,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnRegTeacher"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnRegStudent">
@@ -320,6 +331,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -339,7 +351,7 @@
                     android:layout_height="wrap_content"
                     android:text="Register New Teacher"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -350,8 +362,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnStudentlist"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnRegTeacher">
@@ -360,6 +374,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -379,7 +394,7 @@
                     android:layout_height="wrap_content"
                     android:text="Students List"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -390,8 +405,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnTeacherlist"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnStudentlist">
@@ -400,6 +417,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -419,7 +437,7 @@
                     android:layout_height="wrap_content"
                     android:text="Teachers List"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -430,8 +448,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnAnnouncement"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnTeacherlist">
@@ -440,6 +460,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -459,7 +480,7 @@
                     android:layout_height="wrap_content"
                     android:text="Announcement"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -470,8 +491,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnMsgToTeacher"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:cardBackgroundColor="@color/c5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnAnnouncement">
@@ -480,6 +503,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -499,7 +523,7 @@
                     android:layout_height="wrap_content"
                     android:text="Connect To a Teacher"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -510,8 +534,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnExam"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnMsgToTeacher">
 
@@ -519,6 +545,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -538,7 +565,7 @@
                     android:layout_height="wrap_content"
                     android:text="Exam Centre"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -549,8 +576,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnAds"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnExam">
 
@@ -558,6 +587,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -577,7 +607,7 @@
                     android:layout_height="wrap_content"
                     android:text="Advertisement"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 
@@ -588,8 +618,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnAlumni"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="30dp"
+                android:layout_height="80dp"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnAds">
 
@@ -597,6 +629,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -616,7 +649,7 @@
                     android:layout_height="wrap_content"
                     android:text="Alumni"
                     android:fontFamily="@font/amaranth"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 

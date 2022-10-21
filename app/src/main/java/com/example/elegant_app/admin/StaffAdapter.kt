@@ -33,7 +33,7 @@ class StaffAdapter(
                     }?.addOnFailureListener {
                         // Handle any errors
                     }
-                    dpTitle.setText(item.name)
+                    dpTitle.text = item.name
 
                     MainCard.setOnClickListener(){
                         itemClick?.invoke(item)

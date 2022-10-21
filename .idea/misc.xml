@@ -9,13 +9,15 @@
         <entry key="app/src/main/res/drawable/bordered.xml" value="0.3345" />
         <entry key="app/src/main/res/drawable/card.xml" value="0.3285" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/complete.xml" value="0.2445" />
         <entry key="app/src/main/res/drawable/container.xml" value="0.3285" />
         <entry key="app/src/main/res/drawable/curved.xml" value="0.2285" />
         <entry key="app/src/main/res/drawable/error_curved.xml" value="0.336" />
+        <entry key="app/src/main/res/drawable/round.xml" value="0.2445" />
         <entry key="app/src/main/res/drawable/t_home_curve.xml" value="0.106" />
         <entry key="app/src/main/res/drawable/t_home_curve2.xml" value="0.1475" />
-        <entry key="app/src/main/res/drawable/view_profilecard.xml" value="0.277" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/view_profilecard.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/ad_card.xml" value="0.17" />
         <entry key="app/src/main/res/layout/card.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fee_card.xml" value="0.28131680205215903" />
@@ -26,8 +28,8 @@
         <entry key="app/src/main/res/layout/fragment_assignment.xml" value="0.16875" />
         <entry key="app/src/main/res/layout/fragment_connect_staff.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_exam.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_fee_list.xml" value="0.2821718683197948" />
-        <entry key="app/src/main/res/layout/fragment_fee_mgt.xml" value="0.2821718683197948" />
+        <entry key="app/src/main/res/layout/fragment_fee_list.xml" value="0.22538293216630198" />
+        <entry key="app/src/main/res/layout/fragment_fee_mgt.xml" value="0.23569794050343248" />
         <entry key="app/src/main/res/layout/fragment_feedback.xml" value="0.2821718683197948" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/fragment_makeprofile.xml" value="0.2573007103393844" />
@@ -44,13 +46,13 @@
         <entry key="app/src/main/res/layout/fragment_splashfragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_splashragment.xml" value="0.3234375" />
         <entry key="app/src/main/res/layout/fragment_staff__editprofile.xml" value="0.16875" />
-        <entry key="app/src/main/res/layout/fragment_staff__home.xml" value="0.2894736842105263" />
+        <entry key="app/src/main/res/layout/fragment_staff__home.xml" value="0.2325056433408578" />
         <entry key="app/src/main/res/layout/fragment_staff__post.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/fragment_staff_list.xml" value="0.2821718683197948" />
         <entry key="app/src/main/res/layout/fragment_staff_profile.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_student_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_student_profile.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_t_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_t_home.xml" value="0.19270346117867165" />
         <entry key="app/src/main/res/layout/fragment_t_studentlist.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_teacher_list.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/fragment_teacher_profile.xml" value="0.33" />

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluredbg"
+    android:background="@color/light_blue_A200"
     tools:context=".staff.Student_listFragment">
 
     <androidx.recyclerview.widget.RecyclerView
