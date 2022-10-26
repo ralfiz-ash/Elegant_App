@@ -73,7 +73,9 @@ class THomeFragment : Fragment() {
         }
 
         binding.apply {
-
+editBox.setOnClickListener() {
+    findNavController().navigate(THomeFragmentDirections.actionTHomeFragmentToEditProfileFragment())
+}
         }
 
     }

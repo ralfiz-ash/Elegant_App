@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoubtFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Make your Doubts"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edt_doubt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/sback"
+            android:hint="Ask your doubt here"
+            android:padding="10dp"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/ask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#0E5112"
+            android:gravity="center"
+            android:text="Ask"
+            android:textColor="#fff" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/doubt_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/layout_doubt" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mob_nav"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.elagant.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_to_studentHome"
+            app:destination="@id/studentHome" />
+        <action
+            android:id="@+id/action_splash_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_splash_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentHome"
+        android:name="com.example.elagant.StudentHome"
+        android:label="fragment_student_home"
+        tools:layout="@layout/fragment_student_home">
+        <action
+            android:id="@+id/action_studentHome_to_doubtFragment"
+            app:destination="@id/doubtFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_studyfragment"
+            app:destination="@id/studyfragment" />
+        <action
+            android:id="@+id/action_studentHome_to_teachersFragment"
+            app:destination="@id/teachersFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_timetableFragment"
+            app:destination="@id/timetableFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_examFragment"
+            app:destination="@id/examFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_dutiesFragment"
+            app:destination="@id/dutiesFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_notifyFragment"
+            app:destination="@id/notifyFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_feed_compFragment"
+            app:destination="@id/feed_compFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_studentHome_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doubtFragment"
+        android:name="com.example.elagant.DoubtFragment"
+        android:label="fragment_doubt"
+        tools:layout="@layout/fragment_doubt">
+        <action
+            android:id="@+id/action_doubtFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/dutiesFragment"
+        android:name="com.example.elagant.DutiesFragment"
+        android:label="fragment_duties"
+        tools:layout="@layout/fragment_duties">
+        <action
+            android:id="@+id/action_dutiesFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/examFragment"
+        android:name="com.example.elagant.ExamFragment"
+        android:label="fragment_exam"
+        tools:layout="@layout/fragment_exam">
+        <action
+            android:id="@+id/action_examFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/studyfragment"
+        android:name="com.example.elagant.Studyfragment"
+        android:label="fragment_studyfragment"
+        tools:layout="@layout/fragment_studyfragment">
+        <action
+            android:id="@+id/action_studyfragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/teachersFragment"
+        android:name="com.example.elagant.TeachersFragment"
+        android:label="fragment_teachers"
+        tools:layout="@layout/fragment_teachers">
+        <action
+            android:id="@+id/action_teachersFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.example.elagant.TimetableFragment"
+        android:label="fragment_timetable"
+        tools:layout="@layout/fragment_timetable">
+        <action
+            android:id="@+id/action_timetableFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifyFragment"
+        android:name="com.example.elagant.NotifyFragment"
+        android:label="fragment_notify"
+        tools:layout="@layout/fragment_notify">
+        <action
+            android:id="@+id/action_notifyFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.elagant.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/feed_compFragment"
+        android:name="com.example.elagant.Feed_compFragment"
+        android:label="fragment_feed_comp"
+        tools:layout="@layout/fragment_feed_comp">
+        <action
+            android:id="@+id/action_feed_compFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.elagant.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home2_to_studentHome"
+            app:destination="@id/studentHome" />
+        <action
+            android:id="@+id/action_home2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.elagant.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.elagant.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_studentHome"
+            app:destination="@id/studentHome" />
+    </fragment>
+</navigation>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1f5f8"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".staff.Staff_PostFragment">
 
@@ -59,18 +60,19 @@
             app:layout_constraintTop_toBottomOf="@id/etTPostmessage" />
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_Signin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/app_btn"
             android:fontFamily="@font/amaranth"
+            android:gravity="center"
             android:text="@string/postmessagebtn"
             android:textAllCaps="false"
-            android:textSize="18dp"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etDate" />

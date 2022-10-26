@@ -70,13 +70,26 @@ data class AlumniStudentModel(
     var mobile: String?=null,
     var email: String?=null,
     var blood: String?=null,
-    var dob: String?=null,
-    var adhar: String?=null,
-    var gender: String?=null,
-    var address: String?=null,
-    var standard: String?=null,
-    var division: String?=null,
-    var medium: String?=null,
-    var photo: String?=null,
-    var doc_id: String?=null
+    var dob: String? = null,
+    var adhar: String? = null,
+    var gender: String? = null,
+    var address: String? = null,
+    var standard: String? = null,
+    var division: String? = null,
+    var medium: String? = null,
+    var photo: String? = null,
+    var doc_id: String? = null
+)
+
+data class AlumniStaffModel(
+    var name: String,
+    var mobile: String? = null,
+    var email: String? = null,
+    var blood: String? = null,
+    var address: String? = null,
+    var dob: String? = null,
+    var gender: String? = null,
+    var adhar: String? = null,
+    var photo: String? = null,
+    var doc_id: String? = null,
 )

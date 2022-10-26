@@ -31,19 +31,20 @@ class StaffProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            val imageRef = args.data.photo?.let {
-                FirebaseStorage.getInstance().getReferenceFromUrl(
-                    it
-                )
+            if (args.data.photo == "nil") {
+                userImage.setBackgroundResource(android.R.drawable.ic_media_pause)
+            } else {
+                val imageRef = args.data.photo?.let {
+                    FirebaseStorage.getInstance().getReferenceFromUrl(it)
+                }
+                imageRef?.getBytes(10 * 1024 * 1024)?.addOnSuccessListener {
+                    val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
+                    userImage.setImageBitmap(bitmap)
+                }?.addOnFailureListener {
+                    // Handle any errors
+                }
             }
-            imageRef?.getBytes(10 * 1024 * 1024)?.addOnSuccessListener {
-                val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
-                userImage.setImageBitmap(bitmap)
 
-
-            }?.addOnFailureListener {
-                // Handle any errors
-            }
             tvName.setText(args.data.name)
             NameValue.text = (args.data.name)
             mobileValue.setText(args.data.mobile)
@@ -54,10 +55,6 @@ class StaffProfileFragment : Fragment() {
             genderValue.setText(args.data.gender)
             adharValue.setText(args.data.adhar)
 
-
         }
-
-
     }
-
 }

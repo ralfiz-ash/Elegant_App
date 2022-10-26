@@ -57,22 +57,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etTPostmessage" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_Signin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_height="48dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginHorizontal="24dp"
             android:background="@drawable/app_btn"
             android:fontFamily="@font/amaranth"
             android:text="@string/postmessagebtn"
+            android:gravity="center"
             android:textAllCaps="false"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etDate" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

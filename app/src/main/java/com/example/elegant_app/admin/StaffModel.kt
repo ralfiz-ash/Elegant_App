@@ -16,4 +16,5 @@ data class StaffModel(
     var gender:String?=null,
     var adhar: String?=null,
     var photo: String?=null,
+    var doc_id: String? = null
 ):Parcelable

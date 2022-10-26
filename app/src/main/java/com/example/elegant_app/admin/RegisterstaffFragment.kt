@@ -12,6 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.elegant_app.R
 import com.example.elegant_app.databinding.FragmentRegisterstaffBinding
 import com.example.elegant_app.staff.FeeModel
@@ -88,31 +90,44 @@ class RegisterstaffFragment : Fragment() {
             staffGender=selectedGender
         }
 
-        binding.btnLoadpicture.setOnClickListener(){
+        binding.CameraContainer.setOnClickListener() {
             selectImage()
         }
 
-        binding.btnUpload.setOnClickListener(){
+        binding.btnAddStaff.setOnClickListener() {
             uploadImage()
-        }
 
-        binding.btnAddStudent.setOnClickListener(){
+            staffName = binding.etSName.text.toString()
+            staffMobile = binding.etSmob.text.toString()
+            staffEmail = binding.etSemail.text.toString()
+            staffBlood = binding.etSblood.text.toString()
+            staffAddress = binding.etSaddress.text.toString()
+            staffAdhar = binding.etSAdhar.text.toString()
 
-            staffName=binding.etSName.text.toString()
-            staffMobile=binding.etSmob.text.toString()
-            staffEmail=binding.etSemail.text.toString()
-            staffBlood=binding.etSblood.text.toString()
-            staffAddress=binding.etSaddress.text.toString()
-            staffAdhar=binding.etSAdhar.text.toString()
-            if(StaffFormValidate())
+            if (StaffFormValidate())
             {
                 val fireStoreDatabase = FirebaseFirestore.getInstance()
-                val obj = StaffModel(staffName,staffMobile,staffEmail,staffBlood,staffAddress,staffDob,staffGender,staffAdhar,staffEncodedstring) // obj of modelclass
+                val obj = StaffModel(
+                    name = staffName,
+                    mobile = staffMobile,
+                    email = staffEmail,
+                    blood = staffBlood,
+                    address = staffAddress,
+                    dob = staffDob,
+                    gender = staffGender,
+                    adhar = staffAdhar,
+                    photo = staffEncodedstring
+                ) // obj of modelclass
 
                 fireStoreDatabase.collection("Office_Staff")
                     .add(obj)
                     .addOnSuccessListener {
                         Toast.makeText(requireContext(), "Data added", Toast.LENGTH_LONG).show()
+                        Snackbar.make(
+                            requireView(),
+                            "Staff Registration Successful",
+                            Snackbar.LENGTH_LONG
+                        ).show()
 
                         //Log.d(TAG, "Added document with ID ${it.id}")
                     }
@@ -124,6 +139,13 @@ class RegisterstaffFragment : Fragment() {
                 //Snackbar.make(,"Fee added successfully", Snackbar.LENGTH_LONG).show()
 
             }
+
+            binding.etSName.text.clear()
+            binding.etSmob.text.clear()
+            binding.etSemail.text.clear()
+            binding.etSblood.text.clear()
+            binding.etSaddress.text.clear()
+            binding.etSAdhar.text.clear()
         }
 
 
@@ -146,8 +168,12 @@ class RegisterstaffFragment : Fragment() {
 
             filePath = data.data
             try {
-                var bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, filePath)
-                binding.Staffimage.setImageBitmap(bitmap)
+                var bitmap =
+                    MediaStore.Images.Media.getBitmap(requireContext().contentResolver, filePath)
+                //Glide.with(requireContext()).load(bitmap).into(binding.staffImage)
+                Glide.with(requireContext()).load(bitmap)
+                    .apply(RequestOptions.circleCropTransform()).into(binding.staffImage)
+                // binding.staffImage.setImageBitmap(bitmap)
 
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -162,12 +188,10 @@ class RegisterstaffFragment : Fragment() {
             val uploadTask = ref?.putFile(filePath!!)
             Log.d("url", "staff-uploadImage:${filePath} || ${ref} ->${uploadTask} ")
             staffEncodedstring= ref.toString()
-            binding.successText.alpha=1f
-            binding.btnUpload.alpha=0f
 
         }else{
             Toast.makeText(requireContext(), "Please Upload an Image", Toast.LENGTH_SHORT).show()
-            binding.btnUpload.alpha=1f
+
         }
     }
 

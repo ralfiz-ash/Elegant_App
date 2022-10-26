@@ -47,9 +47,17 @@ class Staff_listFragment : Fragment() {
                     Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
 
                     staffList.add(
-                        StaffModel(document.data.get("name").toString(),document.data.get("mobile").toString(),document.data.get("email").toString(),
-                        document.data.get("blood").toString(),document.data.get("address").toString(),document.data.get("dob").toString(),
-                        document.data.get("gender").toString(),document.data.get("adhar").toString(), document.data.get("photo").toString())
+                        StaffModel(
+                            name = document.data.get("name").toString(),
+                            mobile = document.data.get("mobile").toString(),
+                            email = document.data.get("email").toString(),
+                            blood = document.data.get("blood").toString(),
+                            address = document.data.get("address").toString(),
+                            dob = document.data.get("dob").toString(),
+                            gender = document.data.get("gender").toString(),
+                            adhar = document.data.get("adhar").toString(),
+                            photo = document.data.get("photo").toString()
+                        )
                     )
 
                 }
@@ -60,7 +68,6 @@ class Staff_listFragment : Fragment() {
 
                 adapter.itemClick ={
                     findNavController().navigate(Staff_listFragmentDirections.actionStaffListFragmentToStaffProfileFragment(it))
-
                 }
             }
             .addOnFailureListener { exception ->

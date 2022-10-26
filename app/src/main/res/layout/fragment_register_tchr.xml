@@ -318,72 +318,106 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llMedium" />
 
-            <LinearLayout
-                android:id="@+id/llDivision"
+            <HorizontalScrollView
+                android:id="@+id/scrollBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="8dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDivisionselector">
 
-                <CheckBox
-                    android:id="@+id/cbA"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:id="@+id/llDivision"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="A" />
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/scrollBox">
 
-                <CheckBox
-                    android:id="@+id/cbB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="B"
+                    <CheckBox
+                        android:id="@+id/cbA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="A" />
 
-                    />
+                    <CheckBox
+                        android:id="@+id/cbB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B"
 
-                <CheckBox
-                    android:id="@+id/cbC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="C" />
+                        />
 
-                <CheckBox
-                    android:id="@+id/cbD"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="D"
+                    <CheckBox
+                        android:id="@+id/cbC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="C" />
 
-                    />
+                    <CheckBox
+                        android:id="@+id/cbD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="D"
 
-                <CheckBox
-                    android:id="@+id/cbE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="E"
+                        />
 
-                    />
+                    <CheckBox
+                        android:id="@+id/cbE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E"
 
-                <CheckBox
-                    android:id="@+id/cbF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="F"
+                        />
 
-                    />
+                    <CheckBox
+                        android:id="@+id/cbF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="F"
 
-                <CheckBox
-                    android:id="@+id/cbG"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="G"
+                        />
 
-                    />
+                    <CheckBox
+                        android:id="@+id/cbG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="G"
 
-            </LinearLayout>
+                        />
+
+                    <CheckBox
+                        android:id="@+id/cbHse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HSE"
+
+                        />
+
+                    <CheckBox
+                        android:id="@+id/cbUG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UG"
+
+                        />
+
+                    <CheckBox
+                        android:id="@+id/cbPG"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PG"
+
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <!-- <TextView
                  android:id="@+id/tvUpload_Heading"
@@ -455,7 +489,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llDivision" />
+                app:layout_constraintTop_toBottomOf="@+id/scrollBox" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

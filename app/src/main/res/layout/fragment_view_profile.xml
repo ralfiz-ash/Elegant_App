@@ -74,7 +74,7 @@
     <ImageView
         android:id="@+id/roundImg"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         android:scaleType="fitXY"
         android:src="@drawable/messi"
         app:layout_constraintEnd_toEndOf="parent"

@@ -151,9 +151,6 @@ class RegisterTchrFragment : Fragment() {
             //list for taking fn return of listdivision
             var a: List<Any> = listOf(gettingDivision())
 
-
-
-
             CameraContainer.setOnClickListener() {
                 selectImage()
             }
@@ -400,24 +397,68 @@ class RegisterTchrFragment : Fragment() {
             {
                 if (listDivision.isNotEmpty()) {
 
-                    if ( listDivision.contains(binding.cbG.text.toString()))
-                    {
+                    if (listDivision.contains(binding.cbG.text.toString())) {
                         listDivision.remove(binding.cbG.text.toString())
                     }
                 }
             }
 
-            println("@SIZE"+listDivision.size)
+            println("@SIZE" + listDivision.size)
         }
-        return listDivision
+        binding.cbHse.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                listDivision.add(binding.cbHse.text.toString())
 
+            } else {
+                if (listDivision.isNotEmpty()) {
+
+                    if (listDivision.contains(binding.cbHse.text.toString())) {
+                        listDivision.remove(binding.cbHse.text.toString())
+                    }
+                }
+            }
+
+            println("@SIZE" + listDivision.size)
+        }
+        binding.cbUG.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                listDivision.add(binding.cbUG.text.toString())
+
+            } else {
+                if (listDivision.isNotEmpty()) {
+
+                    if (listDivision.contains(binding.cbUG.text.toString())) {
+                        listDivision.remove(binding.cbUG.text.toString())
+                    }
+                }
+            }
+
+            println("@SIZE" + listDivision.size)
+        }
+        binding.cbPG.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                listDivision.add(binding.cbPG.text.toString())
+
+            } else {
+                if (listDivision.isNotEmpty()) {
+
+                    if (listDivision.contains(binding.cbPG.text.toString())) {
+                        listDivision.remove(binding.cbPG.text.toString())
+                    }
+                }
+            }
+
+            println("@SIZE" + listDivision.size)
+        }
+
+        return listDivision
 
     }
 
     private fun TeacherFormValidate(): Boolean{
         if (
-            binding.etTname.text.isNotBlank() && binding.etTqualif.text.isNotBlank() && binding.etTexperience.text.isNotBlank()  &&
-            binding.etTmob.text.isNotBlank() &&  emailValidator(binding.etTemail.text.toString()) && binding.etTblood.text.isNotBlank() &&
+            binding.etTname.text.isNotBlank() && binding.etTqualif.text.isNotBlank() && binding.etTexperience.text.isNotBlank() &&
+            binding.etTmob.text.length == 10 && emailValidator(binding.etTemail.text.toString()) && binding.etTblood.text.isNotBlank() &&
             binding.etTaddress.text.isNotBlank() && binding.etTAdhar.text.isNotBlank() && binding.etTinchargeclass.text.isNotBlank() && teacherDob.isNotBlank() &&
             teacherGender?.isNotBlank() == true && teacherDivisions.isNotBlank() && teacherMedium.isNotBlank()
         ) {

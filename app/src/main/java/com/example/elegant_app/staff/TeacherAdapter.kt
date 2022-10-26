@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.elegant_app.databinding.TutorListBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -36,7 +38,9 @@ class TeacherAdapter(
                             }
                             imageRef?.getBytes(10 * 1024 * 1024)?.addOnSuccessListener {
                                 val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
-                                dp.setImageBitmap(bitmap)
+                                //dp.setImageBitmap(bitmap)
+                                Glide.with(context).load(bitmap)
+                                    .apply(RequestOptions.circleCropTransform()).into(binding.dp)
 
 
                             }?.addOnFailureListener {

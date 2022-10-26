@@ -35,8 +35,8 @@
             android:id="@+id/Spinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-           android:layout_margin="40dp"
-
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/curved"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvmarkhead" />
@@ -46,50 +46,55 @@
             android:id="@+id/Spinnersubject"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/curved"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Spinner" />
+
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/Spinnermedium"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/curved"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Spinnersubject" />
+
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/Spinnerclass"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/curved"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Spinnermedium" />
+
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/Spinnerdivision"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_margin="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/curved"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Spinnerclass" />
 
-
-
-        <Button
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_Tmarknext"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="40dp"
             android:background="@drawable/app_btn"
+            android:gravity="center"
             android:fontFamily="@font/amaranth"
             android:text="@string/btnNext"
             android:textAllCaps="false"
-            android:textSize="18dp"
+            android:textSize="22dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/Spinnerdivision" />

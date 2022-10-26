@@ -69,7 +69,7 @@ class UploadFragment : Fragment() {
 
             if(Validator())
             {
-
+                upload()
                 val fireStoreDatabase = FirebaseFirestore.getInstance()
                 val obj = StudyModel(standard = standard, subject = subject, title = title, link = link, pdf = pdfEncodedString) // obj of modelclass
 
@@ -82,6 +82,7 @@ class UploadFragment : Fragment() {
                         binding.etStandard.text.clear()
                         binding.etTitle.text.clear()
                         binding.etLink.text.clear()
+
 
 
                         //Log.d(TAG, "Added document with ID ${it.id}")
@@ -127,7 +128,6 @@ class UploadFragment : Fragment() {
                 pdfUri = data?.data!!
                 filePath=data?.data!!
                 binding.pdfTextView.text= pdfUri.toString()
-                upload()
                 val uri: Uri = data?.data!!
                 val uriString: String = uri.toString()
                 var pdfName: String? = null
@@ -138,6 +138,7 @@ class UploadFragment : Fragment() {
                         if (myCursor != null && myCursor.moveToFirst()) {
                             pdfName = myCursor.getString(myCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
                             binding.pdfTextView.text = pdfName
+                            binding.etLink.setText("Nil")
                         }
                     } finally {
                         myCursor?.close()
@@ -153,7 +154,7 @@ class UploadFragment : Fragment() {
             if (mRefrence != null) {
                 mRefrence.putFile(pdfUri).addOnSuccessListener { taskSnapshot: UploadTask.TaskSnapshot? -> var url =taskSnapshot!!.uploadSessionUri
 
-                    binding.etLink.setText(url.toString())
+
                     //binding.dwnTxt.alpha=0f
                     Toast.makeText(requireContext(),"Successfully uploaded",Toast.LENGTH_LONG).show()
                 }

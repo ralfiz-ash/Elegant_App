@@ -53,6 +53,9 @@
         <action
             android:id="@+id/action_THomeFragment_to_uploadFragment"
             app:destination="@id/uploadFragment" />
+        <action
+            android:id="@+id/action_THomeFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/assignmentFragment"
@@ -289,12 +292,17 @@
         android:id="@+id/alumniFragment"
         android:name="com.example.elegant_app.staff.AlumniFragment"
         android:label="fragment_alumni"
-        tools:layout="@layout/fragment_alumni" >
-    <action
-        android:id="@+id/action_alumniFragment_to_StudentProfileFragment"
-        app:destination="@id/studentProfileFragment"/>
+        tools:layout="@layout/fragment_alumni">
+        <action
+            android:id="@+id/action_alumniFragment_to_StudentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
         <action
             android:id="@+id/action_alumniFragment_to_TeacherProfileFragment"
-            app:destination="@id/teacherProfileFragment"/>
+            app:destination="@id/teacherProfileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.elegant_app.teacher.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
 </navigation>

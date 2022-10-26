@@ -45,8 +45,6 @@ class StudentProfileFragment : Fragment() {
                 imageRef?.getBytes(10 * 1024 * 1024)?.addOnSuccessListener {
                     val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
                     userImage.setImageBitmap(bitmap)
-
-
                 }?.addOnFailureListener {
                     // Handle any errors
                 }
@@ -69,6 +67,5 @@ class StudentProfileFragment : Fragment() {
 
         }
     }
-
 
 }

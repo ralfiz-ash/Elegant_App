@@ -112,14 +112,18 @@ class RegisterStdntFragment : Fragment() {
                 Toast.makeText(requireContext(), selected_Gender, Toast.LENGTH_SHORT).show()
             }
             radioGroupDivision.setOnCheckedChangeListener { group, checkedId ->
-                when(checkedId){
-                    R.id.rbA ->selected_Division
-                    R.id.rbB ->selected_Division
-                    R.id.rbC ->selected_Division
-                    R.id.rbD ->selected_Division
-                    R.id.rbE ->selected_Division
-                    R.id.rbFF ->selected_Division
-                    R.id.rbG ->selected_Division
+                when (checkedId) {
+                    R.id.rbA -> selected_Division
+                    R.id.rbB -> selected_Division
+                    R.id.rbC -> selected_Division
+                    R.id.rbD -> selected_Division
+                    R.id.rbE -> selected_Division
+                    R.id.rbFF -> selected_Division
+                    R.id.rbG -> selected_Division
+                    R.id.rbHse -> selected_Division
+                    R.id.rbUg -> selected_Division
+                    R.id.rbPg -> selected_Division
+
 
                 }
                 selected_Division="${binding.etstclass.text} ${selected_Division}"
@@ -212,7 +216,6 @@ class RegisterStdntFragment : Fragment() {
             val uploadTask = ref?.putFile(filePath!!)
             Log.d("url", "uploadImage:${filePath} || ${ref} ->${uploadTask} ")
             encodedstring= ref.toString()
-
 
         }else{
             Toast.makeText(requireContext(), "Please Upload an Image", Toast.LENGTH_SHORT).show()

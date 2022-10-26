@@ -344,73 +344,84 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/llMedium" />
 
-            <LinearLayout
-                android:id="@+id/llDivision"
+            <HorizontalScrollView
+                android:id="@+id/scrollRadios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
+                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDivisionselector">
+                app:layout_constraintTop_toBottomOf="@id/tvDivisionselector">
+
 
                 <RadioGroup
                     android:id="@+id/radioGroup_Division"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_centerInParent="true">
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/rbA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
                         android:text="A" />
 
                     <RadioButton
                         android:id="@+id/rbB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="B"
-                        android:layout_centerInParent="true" />
+                        android:text="B" />
 
                     <RadioButton
                         android:id="@+id/rbC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="C"
-                        android:layout_centerInParent="true" />
+                        android:text="C" />
 
                     <RadioButton
                         android:id="@+id/rbD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="D"
-                        android:layout_centerInParent="true" />
+                        android:text="D" />
 
                     <RadioButton
                         android:id="@+id/rbE"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="E"
-                        android:layout_centerInParent="true" />
+                        android:text="E" />
 
                     <RadioButton
                         android:id="@+id/rbFF"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="F"
-                        android:layout_centerInParent="true" />
+                        android:text="F" />
 
                     <RadioButton
                         android:id="@+id/rbG"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="G"
-                        android:layout_centerInParent="true" />
+                        android:text="G" />
+
+                    <RadioButton
+                        android:id="@+id/rbHse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HSE" />
+
+                    <RadioButton
+                        android:id="@+id/rbUg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UG" />
+
+                    <RadioButton
+                        android:id="@+id/rbPg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PG" />
                 </RadioGroup>
 
-
-            </LinearLayout>
+            </HorizontalScrollView>
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -428,7 +439,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llDivision" />
+                app:layout_constraintTop_toBottomOf="@+id/scrollRadios" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.elegant_app.databinding.StudentListBinding
 import com.example.elegant_app.databinding.TutorListBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -26,8 +29,6 @@ class StudentAdapter(
         {
             fun bind(item:StudentModel){
                 binding.apply {
-                  /*  val pic=item.photo?.toUri()
-                    dp.setImageURI(pic)*/
                     if(item.photo=="nil")
                     {
                         dp.setBackgroundResource(android.R.drawable.ic_menu_report_image)
@@ -39,19 +40,17 @@ class StudentAdapter(
                         }
                         imageRef?.getBytes(10 * 1024 * 1024)?.addOnSuccessListener {
                             val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
-                            dp.setImageBitmap(bitmap)
-
+                            //dp.setImageBitmap(bitmap)
+                            Glide.with(context).load(bitmap)
+                                .apply(RequestOptions.circleCropTransform()).into(binding.dp)
 
                         }?.addOnFailureListener {
                             // Handle any errors
                         }
                     }
-
-
                     dpTitle.text = item.name
 
                     delete.setOnClickListener(){
-                        //Log.d("studid", "bind: ${item.doc_id}")
                         showdialog(item)
                     }
 
