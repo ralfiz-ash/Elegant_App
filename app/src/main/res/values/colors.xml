@@ -19,4 +19,7 @@
     <color name="c4">#BF9FEA7F</color>
     <color name="c5">#BF79DACB</color>
     <color name="c6">#EFA68F</color>
+    <color name="tint_white">#F1f5f8</color>
+    <color name="ocean_dark">#070126</color>
+
 </resources>

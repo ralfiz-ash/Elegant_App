@@ -18,13 +18,17 @@ import com.example.elegant_app.staff.TeacherModel
 import com.example.elegant_app.staff.Teacher_listFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.util.*
 
 
 class AssignmentFragment : Fragment() {
     private lateinit var binding: FragmentAssignmentBinding
-    lateinit var subject:String
-    lateinit var topic:String
+    lateinit var subject: String
+    lateinit var currentdate: String
+    lateinit var topic: String
     lateinit var date:String
     lateinit var standard:String
     val taskList = mutableListOf<AssignmentModel>()
@@ -44,6 +48,17 @@ class AssignmentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showData()
+
+        //current date and time
+        binding.etCurrentDate.setOnClickListener() {
+            val current = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+            val formatted = current.format(formatter)
+            println("Current Date is: $formatted")
+            binding.etCurrentDate.setText(formatted)
+            currentdate = binding.etCurrentDate.text.toString()
+        }
+
         binding.etTasmntdate.setOnClickListener() {
             val c = Calendar.getInstance()
 
@@ -79,7 +94,13 @@ class AssignmentFragment : Fragment() {
             if(AssignmentFormValidate())
             {
                 val fireStoreDatabase = FirebaseFirestore.getInstance()
-                val obj = AssignmentModel(subject,topic,date,standard) // obj of modelclass
+                val obj = AssignmentModel(
+                    currentdate,
+                    subject,
+                    topic,
+                    date,
+                    standard
+                ) // obj of modelclass
 
                 fireStoreDatabase.collection("Assignment")
                     .add(obj)
@@ -89,6 +110,7 @@ class AssignmentFragment : Fragment() {
                         binding.etTasmnttopic.text.clear()
                         binding.etTasmntStd.text.clear()
                         binding.etTasmntdate.text.clear()
+                        binding.etCurrentDate.text.clear()
 
                         //Log.d(TAG, "Added document with ID ${it.id}")
                     }
@@ -108,8 +130,8 @@ class AssignmentFragment : Fragment() {
 
     private fun AssignmentFormValidate(): Boolean{
         if (
-            binding.etTasmntsub.text.isNotBlank() && binding.etTasmnttopic.text.isNotBlank() && binding.etTasmntdate.text.isNotBlank()  &&
-            binding.etTasmntStd.text.isNotBlank()
+            binding.etTasmntsub.text.isNotBlank() && binding.etTasmnttopic.text.isNotBlank() && binding.etTasmntdate.text.isNotBlank() &&
+            binding.etTasmntStd.text.isNotBlank() && binding.etCurrentDate.text.isNotBlank()
         ) {
             return true
         }
@@ -133,8 +155,13 @@ class AssignmentFragment : Fragment() {
                 for (document in result) {
                     //Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
                     taskList.add(
-                        AssignmentModel(document.data.get("subject").toString(),document.data.get("topic").toString(),document.data.get("date").toString(),
-                        document.data.get("standard").toString())
+                        AssignmentModel(
+                            document.data.get("createDate").toString(),
+                            document.data.get("subject").toString(),
+                            document.data.get("topic").toString(),
+                            document.data.get("date").toString(),
+                            document.data.get("standard").toString()
+                        )
                     )
 
                     //}

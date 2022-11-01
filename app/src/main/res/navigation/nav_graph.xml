@@ -9,7 +9,7 @@
         android:id="@+id/splashfragment"
         android:name="com.example.elegant_app.SplashFragment"
         android:label="fragment_splashragment"
-        tools:layout="@layout/fragment_splashfragment" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashragment_to_signInFragment"
             app:destination="@id/signInFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/signInFragment"
         android:name="com.example.elegant_app.SignInFragment"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_signInFragment_to_THomeFragment"
             app:destination="@id/THomeFragment" />
@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_signInFragment_to_admin_HomeFragment"
             app:destination="@id/admin_HomeFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_studentHome"
+            app:destination="@id/studentHome" />
     </fragment>
 
     <fragment
@@ -305,4 +308,82 @@
         android:name="com.example.elegant_app.teacher.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/studentHome"
+        android:name="com.example.elegant_app.student.StudentHomeFragment"
+        android:label="StudentHome">
+        <action
+            android:id="@+id/action_studentHome_to_studentExamFragment"
+            app:destination="@id/studentExamFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_studyfragment"
+            app:destination="@id/studyfragment" />
+        <action
+            android:id="@+id/action_studentHome_to_dutiesFragment"
+            app:destination="@id/dutiesFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_teachersFragment"
+            app:destination="@id/teachersFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_feed_compFragment"
+            app:destination="@id/feed_compFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_timeTableBoardFragment"
+            app:destination="@id/timeTableBoardFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_doubtFragment"
+            app:destination="@id/doubtFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_notifyFragment"
+            app:destination="@id/notifyFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_studentAccountFragment"
+            app:destination="@id/studentAccountFragment" />
+        <action
+            android:id="@+id/action_studentHome_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentExamFragment"
+        android:name="com.example.elegant_app.student.StudentExamFragment"
+        android:label="StudentExamFragment" />
+    <fragment
+        android:id="@+id/studyfragment"
+        android:name="com.example.elegant_app.student.Studyfragment"
+        android:label="Studyfragment" />
+    <fragment
+        android:id="@+id/dutiesFragment"
+        android:name="com.example.elegant_app.student.DutiesFragment"
+        android:label="DutiesFragment" />
+    <fragment
+        android:id="@+id/teachersFragment"
+        android:name="com.example.elegant_app.student.TeachersFragment"
+        android:label="TeachersFragment" />
+    <fragment
+        android:id="@+id/feed_compFragment"
+        android:name="com.example.elegant_app.student.Feed_compFragment"
+        android:label="Feed_compFragment" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.elegant_app.student.PaymentFragment"
+        android:label="PaymentFragment" />
+    <fragment
+        android:id="@+id/timeTableBoardFragment"
+        android:name="com.example.elegant_app.student.TimeTableBoardFragment"
+        android:label="TimeTableBoardFragment" />
+    <fragment
+        android:id="@+id/doubtFragment"
+        android:name="com.example.elegant_app.student.DoubtFragment"
+        android:label="DoubtFragment" />
+    <fragment
+        android:id="@+id/notifyFragment"
+        android:name="com.example.elegant_app.student.NotifyFragment"
+        android:label="NotifyFragment" />
+    <fragment
+        android:id="@+id/studentAccountFragment"
+        android:name="com.example.elegant_app.student.StudentAccountFragment"
+        android:label="StudentAccountFragment" />
 </navigation>

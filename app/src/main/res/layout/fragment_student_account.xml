@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C9F8E5">
+
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="User Name "
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/userImage"
+        app:layout_constraintStart_toEndOf="@+id/userImage"
+        app:layout_constraintTop_toTopOf="@+id/userImage" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/sback"
+        app:layout_constraintTop_toBottomOf="@id/ivBanner">
+
+        <TextView
+            android:id="@+id/Nametxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Name"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/NameValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Name of a Teacher"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/Nametxt" />
+
+        <TextView
+            android:id="@+id/qualiftxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Class"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Nametxt" />
+
+        <TextView
+            android:id="@+id/qualifValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Qualification ..."
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/qualiftxt" />
+
+        <View
+            android:id="@+id/v2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/qualiftxt" />
+
+        <TextView
+            android:id="@+id/exptxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="STD"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/qualiftxt" />
+
+        <TextView
+            android:id="@+id/expValue"
+            android:layout_width="195dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="2"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/exptxt" />
+
+        <View
+            android:id="@+id/v3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/exptxt" />
+
+        <TextView
+            android:id="@+id/mobiletxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Mobile"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exptxt" />
+
+        <TextView
+            android:id="@+id/mobileValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="9087908977"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mobiletxt" />
+
+        <View
+            android:id="@+id/v4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/mobiletxt" />
+
+        <TextView
+            android:id="@+id/emailtxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Email Id"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mobiletxt" />
+
+        <TextView
+            android:id="@+id/emailValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="ashiqpp@gmail.com"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/emailtxt" />
+
+        <View
+            android:id="@+id/v5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/emailtxt" />
+
+        <TextView
+            android:id="@+id/bloodtxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Blood Group"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailtxt" />
+
+        <TextView
+            android:id="@+id/bloodValue"
+            android:layout_width="142dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="B+"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bloodtxt" />
+
+        <View
+            android:id="@+id/v6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/bloodtxt" />
+
+        <TextView
+            android:id="@+id/adhartxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Adhar Number"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bloodtxt" />
+
+        <TextView
+            android:id="@+id/adharValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="812300454367"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/adhartxt" />
+
+        <View
+            android:id="@+id/v7"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/adhartxt" />
+
+        <TextView
+            android:id="@+id/gendertxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Gender"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adhartxt" />
+
+        <TextView
+            android:id="@+id/genderValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Male"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/gendertxt" />
+
+        <View
+            android:id="@+id/v8"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/gendertxt" />
+
+        <TextView
+            android:id="@+id/addresstxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Address"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gendertxt" />
+
+        <TextView
+            android:id="@+id/addressValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:text="Address in House, Vallapuzha Post, Pin 679336"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addresstxt"
+            app:layout_constraintTop_toTopOf="@id/addresstxt" />
+
+        <View
+            android:id="@+id/v9"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/addressValue" />
+
+        <TextView
+            android:id="@+id/inchargetxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="start"
+            android:text="Class Incharge"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v9" />
+
+        <TextView
+            android:id="@+id/inchargeValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="10, 9"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/inchargetxt" />
+
+        <View
+            android:id="@+id/v10"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.2"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/NameValue"
+            app:layout_constraintStart_toStartOf="@+id/Nametxt"
+            app:layout_constraintTop_toBottomOf="@id/inchargetxt" />
+
+        <TextView
+            android:id="@+id/divtxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="32dp"
+            android:ellipsize="start"
+            android:text="Medium"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inchargetxt" />
+
+        <TextView
+            android:id="@+id/divValue"
+            android:layout_width="251dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="A,B,C"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/divtxt" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

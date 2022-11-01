@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/c2"
+    android:background="@color/tint_white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".admin.FeedbackFragment">
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/rvfeedbacks"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:listitem="@layout/feedback_tile"
-    android:layout_margin="16dp"
+    android:layout_margin="24dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"/>
 

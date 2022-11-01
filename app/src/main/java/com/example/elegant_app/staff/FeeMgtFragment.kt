@@ -133,6 +133,7 @@ lateinit var binding:FragmentFeeMgtBinding
                 position: Int,
                 id: Long
             ) {
+
                 std=spinner.selectedItem.toString()
                 //todo action
             }

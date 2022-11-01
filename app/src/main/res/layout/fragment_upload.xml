@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ocean_dark"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".teacher.UploadFragment">
 
@@ -23,7 +24,7 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/amaranth"
             android:text="Upload Study Materials"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,9 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/curved"
+            android:textColor="@color/black"
             android:hint="Enter your Subject"
+            android:textColorHint="@color/black"
             android:paddingStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUpload" />
@@ -51,10 +54,13 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/curved"
             android:hint="Enter Class"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:paddingStart="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etSubject" />
+
         <EditText
             android:id="@+id/etTitle"
             android:layout_width="match_parent"
@@ -64,6 +70,8 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/curved"
             android:hint="Enter Title"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:paddingStart="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +86,8 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/curved"
             android:hint="Drop the link"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:paddingStart="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

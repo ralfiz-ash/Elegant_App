@@ -7,7 +7,7 @@
     <string name="applogo_name">Elegant App</string>
     <string name="signin">Sign In</string>
     <string name="continuewith">Or Continue with</string>
-    <string name="enterusername">Enter username</string>
+    <string name="enterusername">Username</string>
     <string name="enterpassword">Password</string>
     //teacher fragments-make profile
     <string name="fillprofile">Complete Your Profile</string>

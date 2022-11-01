@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#070126"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".teacher.AssignmentFragment">
 
@@ -28,11 +29,29 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/amaranth"
                 android:text="@string/Tasmnthead"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etCurrentDate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/curved"
+                android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
+                android:focusable="false"
+                android:hint="Click here to get Time"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvasmntHeading" />
 
             <EditText
                 android:id="@+id/etTasmntsub"
@@ -43,9 +62,11 @@
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/curved"
                 android:hint="@string/etTasmntsub"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:paddingStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvasmntHeading" />
+                app:layout_constraintTop_toBottomOf="@+id/etCurrentDate" />
 
             <EditText
                 android:id="@+id/etTasmnttopic"
@@ -54,6 +75,8 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:background="@drawable/curved"
                 android:hint="@string/etTasmnttopic"
                 android:paddingStart="10dp"
@@ -68,7 +91,9 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/curved"
+                android:textColor="@color/black"
                 android:focusable="false"
+                android:textColorHint="@color/black"
                 android:hint="@string/etTasmntdate"
                 android:paddingStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +106,10 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
+                android:textColor="@color/black"
                 android:background="@drawable/curved"
                 android:hint="Class and Division"
+                android:textColorHint="@color/black"
                 android:paddingStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etTasmntdate" />
@@ -111,7 +138,7 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/amaranth"
                 android:text="Assignments History"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:background="@color/black"
+                android:background="#070126"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:listitem="@layout/feedback_tile"

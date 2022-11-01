@@ -42,7 +42,8 @@ class SignInFragment : Fragment() {
                 findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToAdminHomeFragment())
             }
             clFbimg.setOnClickListener(){
-               // findNavController().navigate(SignInFragmentDirections.)
+                findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToStudentHome())
+
             }
         }
     }

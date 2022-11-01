@@ -2,6 +2,7 @@ package com.example.elegant_app.staff
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.util.Log
@@ -53,8 +54,8 @@ class TimetableFragment : Fragment(),
     var minute: Int = 0
     var endHour: Int = 0
     var endMinute: Int = 0
-    var isStartTimeClicked=false
-    var isStartTimeSet=false
+    var isStartTimeClicked = false
+    var isStartTimeSet = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +69,7 @@ class TimetableFragment : Fragment(),
     ): View? {
 
 
-        binding=FragmentTimetableBinding.inflate(layoutInflater,container,false)
+        binding = FragmentTimetableBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -77,8 +78,8 @@ class TimetableFragment : Fragment(),
 
         setupSpinner_For_class()
         setupSpinner_For_division()
-
         setupSpinner_For_teacher()
+
         binding.Date.setOnClickListener() {
             val c = Calendar.getInstance()
 
@@ -97,7 +98,8 @@ class TimetableFragment : Fragment(),
                     // date to our edit text.
                     val selectedDate =
                         (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
-                    date=selectedDate
+                    date = selectedDate
+                    binding.Date.setTextColor(Color.BLACK)
                     binding.Date.setText(selectedDate)
                 },
                 year, month, day
@@ -107,15 +109,15 @@ class TimetableFragment : Fragment(),
         }
         binding.apply {
 
-            Time.setOnClickListener(){
-                isStartTimeClicked=true
+            Time.setOnClickListener() {
+                isStartTimeClicked = true
                 val timePickerDialog = TimePickerDialog(
-                    requireContext(), this@TimetableFragment, hour, minute,false
+                    requireContext(), this@TimetableFragment, hour, minute, false
                 )
                 timePickerDialog.show()
             }
 
-            endTime.setOnClickListener(){
+            endTime.setOnClickListener() {
                 if (isStartTimeSet) {
                     val timePickerDialog = TimePickerDialog(
                         requireContext(), this@TimetableFragment, endHour, endMinute, false
@@ -124,7 +126,7 @@ class TimetableFragment : Fragment(),
                 }
             }
 
-            btnSignin.setOnClickListener(){
+            btnSignin.setOnClickListener() {
                 if (validator()) {
                     schedule = "${startTime} To ${endtime}"
 
@@ -132,18 +134,15 @@ class TimetableFragment : Fragment(),
                     val obj = TimetableModel(
                         date = date,
                         standard = standard,
-                        subject = subject,
-                        time = schedule,
-                        tutor = tutor
+                        subject = subject, tutor = tutor,
+                        time = startTime, endtime = endtime
+
                     ) // obj of modelclass
 
                     fireStoreDatabase.collection("Timetable")
                         .add(obj)
                         .addOnSuccessListener {
                             //Toast.makeText(requireContext(), "Data added", Toast.LENGTH_LONG).show()
-
-                            /* binding.etDate.text.clear()
-                             binding.etTPostmessage.text.clear()*/
 
                             //Log.d(TAG, "Added document with ID ${it.id}")
                         }
@@ -155,14 +154,13 @@ class TimetableFragment : Fragment(),
                     endtime = null
                     time = null
                     binding.Date.text.clear()
+                    binding.Time.text.clear()
                     binding.endTime.text.clear()
                     Snackbar.make(it, "TimeTable Posted", Snackbar.LENGTH_LONG).show()
 
 
                 }
             }
-
-
         }
 
 
@@ -187,6 +185,7 @@ class TimetableFragment : Fragment(),
                 i = cls
                 setupSpinner_For_subject()
                 Log.d("clselected", "onItemSelected: ${i}")
+                //binding.Spinnerclass.sel
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -267,9 +266,10 @@ class TimetableFragment : Fragment(),
 
 
     private fun setupSpinner_For_division() {
-        val divisionNames = arrayOf("Choose Division","A","B","C","D","E","F")
+        val divisionNames = arrayOf("Choose Division", "A", "B", "C", "D", "E", "F")
         val spinner = binding.Spinnerdivision
-        val arrayAdapter =ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, divisionNames)
+        val arrayAdapter =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, divisionNames)
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = arrayAdapter
 
@@ -280,8 +280,8 @@ class TimetableFragment : Fragment(),
                 position: Int,
                 id: Long
             ) {
-                div=spinner.selectedItem.toString()
-                standard="${cls} ${div}"
+                div = spinner.selectedItem.toString()
+                standard = "${cls} ${div}"
 
             }
 
@@ -328,24 +328,22 @@ class TimetableFragment : Fragment(),
                 }
             }
         }
-
         time = formattedTime
-       // binding.Time.setText(time)
+        // binding.Time.setText(time)
         if (isStartTimeClicked) {
             isStartTimeSet = true
             isStartTimeClicked = false
             binding.Time.setText(time)
+            binding.Time.setTextColor(Color.BLACK)
             startTime = time
             Log.d("timecheck", "on->: ${startTime},${time}")
-        }else
-        {
-            endtime=formattedTime
-            Log.d("timecheck", "on->: ${endtime},${formattedTime}")
+        } else {
+            endtime = formattedTime
+            Log.d("timeEnd", "on->: ${endtime},${formattedTime}")
             binding.endTime.setText(endtime)
 
         }
     }
-
 
 
     private fun setupSpinner_For_teacher() {
@@ -362,7 +360,7 @@ class TimetableFragment : Fragment(),
                 position: Int,
                 id: Long
             ) {
-                tutor= spinner.selectedItem.toString()
+                tutor = spinner.selectedItem.toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -372,19 +370,16 @@ class TimetableFragment : Fragment(),
 
     }
 
-    private fun validator():Boolean{
-        if (date!=null && standard!=null && subject!=null && time!=null && tutor!=null && endtime!=null){
-             return true
-        }
-        else {
+    private fun validator(): Boolean {
+        if (date != null && standard != null && subject != null && time != null && tutor != null && endtime != null) {
+            return true
+        } else {
 
             //Log.d("timetable", "validator: Submit all values")
             Toast.makeText(requireContext(), "Submit all values", Toast.LENGTH_SHORT).show()
             return false
         }
     }
-
-
 
 
 }

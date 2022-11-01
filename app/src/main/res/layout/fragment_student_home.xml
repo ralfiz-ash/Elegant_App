@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/product_presentation_wooden_table_with_background_empty_bookshelf_library_172251_444">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".student.StudentHome">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:cardBackgroundColor="#D8FAEC"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/logoutImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/logout"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Elegant Institute"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivAccount"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintStart_toEndOf="@+id/logoutImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.484" />
+
+                <ImageView
+                    android:id="@+id/ivAccount"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/notify"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivAccount"
+                    app:layout_constraintEnd_toStartOf="@+id/ivAccount"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/ivAccount" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newsrecycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/c_examscore"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/whitebox"
+            android:elevation="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivExamScore"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test"
+            app:layout_constraintEnd_toEndOf="@+id/c_examscore"
+            app:layout_constraintStart_toStartOf="@+id/c_examscore"
+            app:layout_constraintTop_toTopOf="@+id/c_examscore" />
+
+        <TextView
+            android:id="@+id/tvExamScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="16dp"
+            android:text="Exam Score"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_examscore"
+            app:layout_constraintEnd_toEndOf="@+id/c_examscore"
+            app:layout_constraintStart_toStartOf="@+id/c_examscore" />
+
+        <View
+            android:id="@+id/c_study"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/whitebox"
+            android:elevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivStudyMaterial"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/books"
+            app:layout_constraintEnd_toEndOf="@+id/c_study"
+            app:layout_constraintStart_toStartOf="@+id/c_study"
+            app:layout_constraintTop_toTopOf="@+id/c_study" />
+
+        <TextView
+            android:id="@+id/tvStudyMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="16dp"
+            android:text="Study Materials"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_study"
+            app:layout_constraintEnd_toEndOf="@+id/c_study"
+            app:layout_constraintStart_toStartOf="@+id/c_study" />
+
+        <View
+            android:id="@+id/c_timetable"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/whitebox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/c_examscore"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivTimetable"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/schedule"
+            app:layout_constraintEnd_toEndOf="@+id/c_timetable"
+            app:layout_constraintStart_toStartOf="@+id/c_timetable"
+            app:layout_constraintTop_toTopOf="@+id/c_timetable" />
+
+        <TextView
+            android:id="@+id/tvTimetable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text='Time Table'
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_timetable"
+            app:layout_constraintEnd_toEndOf="@+id/c_timetable"
+            app:layout_constraintStart_toStartOf="@+id/c_timetable" />
+
+        <View
+            android:id="@+id/c_Assignments"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/whitebox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/c_study"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivAssignments"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/assignment"
+            app:layout_constraintEnd_toEndOf="@+id/c_Assignments"
+            app:layout_constraintStart_toStartOf="@+id/c_Assignments"
+            app:layout_constraintTop_toTopOf="@+id/c_Assignments" />
+
+        <TextView
+            android:id="@+id/tvAssignments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Assignments"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_Assignments"
+            app:layout_constraintEnd_toEndOf="@+id/c_Assignments"
+            app:layout_constraintStart_toStartOf="@+id/c_Assignments" />
+
+        <View
+            android:id="@+id/c_doubt"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/whitebox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/c_timetable"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivDoubts"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/question_and_answer"
+            app:layout_constraintEnd_toEndOf="@+id/c_doubt"
+            app:layout_constraintStart_toStartOf="@+id/c_doubt"
+            app:layout_constraintTop_toTopOf="@+id/c_doubt" />
+
+        <TextView
+            android:id="@+id/tvDoubts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Doubts"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_doubt"
+            app:layout_constraintEnd_toEndOf="@+id/c_doubt"
+            app:layout_constraintStart_toStartOf="@+id/c_doubt" />
+
+        <View
+            android:id="@+id/c_teach"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/whitebox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/c_Assignments"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivTutors"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/online"
+            app:layout_constraintEnd_toEndOf="@+id/c_teach"
+            app:layout_constraintStart_toStartOf="@+id/c_teach"
+            app:layout_constraintTop_toTopOf="@+id/c_teach" />
+
+        <TextView
+            android:id="@+id/tvTutors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Faculties"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_teach"
+            app:layout_constraintEnd_toEndOf="@+id/c_teach"
+            app:layout_constraintStart_toStartOf="@+id/c_teach" />
+
+        <View
+            android:id="@+id/c_feed"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/whitebox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/c_teach"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivFeedback"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/love__1_"
+            app:layout_constraintEnd_toEndOf="@+id/c_feed"
+            app:layout_constraintStart_toStartOf="@+id/c_feed"
+            app:layout_constraintTop_toTopOf="@+id/c_feed" />
+
+        <TextView
+            android:id="@+id/tvFeedbacks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Feedback"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_feed"
+            app:layout_constraintEnd_toEndOf="@+id/c_feed"
+            app:layout_constraintStart_toStartOf="@+id/c_feed" />
+
+        <View
+            android:id="@+id/c_pay"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/whitebox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/c_doubt"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/ivPay"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-30dp"
+            android:elevation="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rupee"
+            app:layout_constraintEnd_toEndOf="@+id/c_pay"
+            app:layout_constraintStart_toStartOf="@+id/c_pay"
+            app:layout_constraintTop_toTopOf="@+id/c_pay" />
+
+        <TextView
+            android:id="@+id/tvPay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Payment"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/c_pay"
+            app:layout_constraintEnd_toEndOf="@+id/c_pay"
+            app:layout_constraintStart_toStartOf="@+id/c_pay" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

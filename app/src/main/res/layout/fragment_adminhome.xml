@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/c2"
+    android:background="@color/light_blue_600"
     android:layout_height="match_parent">
 
 
@@ -21,7 +21,7 @@
         android:fontFamily="@font/amaranth"
         android:text="Elegant Admin"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="24sp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
         android:layout_gravity="center"
